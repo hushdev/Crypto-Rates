@@ -10,11 +10,11 @@ const Button = ({ children, ...props }) => {
 };
 
 const StyledButton = styled.button`
-  background-color: rgb(0, 127, 255);
+  background-color: var(--blue);
   padding: 10px 15px;
-  color: #ffffff;
-  font-weight: 600;
+  color: var(--text-white);
   border-radius: 10px;
+  border: 0;
 `;
 
 export default Button;

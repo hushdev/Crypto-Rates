@@ -16,10 +16,10 @@ const StyledFooter = styled.div`
   position: fixed;
   bottom: 10px;
   right: 15px;
-  color: #ffffff;
+  color: var(--text-white);
   font-size: 12px;
   & a {
-    color: #ffffff;
+    color: var(--text-white);
     text-decoration: none;
   }
 `;

@@ -3,7 +3,9 @@ import Card from "../components/UI/Card";
 
 const Rates = () => {
   return (
-    <Card>RATES</Card>
+    <Card>
+      RATES
+    </Card>
   );
 };
 

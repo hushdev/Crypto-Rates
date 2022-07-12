@@ -24,7 +24,7 @@ const StyledLoader = styled.div`
     width: 6.5px;
     height: 6.5px;
     border-radius: 50%;
-    background: #5090d3;
+    background: var(--blue);
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
   }
   & div:nth-child(1) {

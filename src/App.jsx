@@ -15,10 +15,12 @@ import BlogPost from "./views/BlogPost";
 
 const App = () => {
   const location = useLocation();
+  const baseUrl = process.env.REACT_APP_API;
+  console.log(baseUrl);
 
   return (
     <div className="App">
-      <Navbar />
+      <Navbar /> 
       <Container>
         <TransitionGroup component={null}>
           <CSSTransition key={location.key} classNames="fade" timeout={300}>

@@ -6,9 +6,9 @@ const Card = ({ children, ...props }) => {
 };
 
 const StyledCard = styled.div`
-  border: 1px solid rgb(30, 73, 118);
+  border: 1px solid var(--gray-decor);
   border-radius: 10px;
-  background-color: rgb(0, 30, 60);
+  background-color: var(--gray);
   padding: 15px;
 `;
 

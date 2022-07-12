@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <StyledNavbar>
       <Container>
-        <Row justifyContent="space-between" alignItems="center">
+        <Row justifyContent="space-between" alignItems="center" padding="0 15px">
           <div className="logo">
             <NavLink to="/">Crypto Rates</NavLink>
           </div>
@@ -36,30 +36,31 @@ const Navbar = () => {
 };
 
 const StyledNavbar = styled.div`
-  background-color: #0a1929;
+  background-color: var(--gray);
   padding: 10px 0;
-  border-bottom: 1px solid #173e68;
+  border-bottom: 1px solid var(--gray-decor);
   margin-bottom: 20px;
   & .logo {
-    color: #ffffff;
     font-size: 16px;
     a {
-      color: #ffffff;
+      color: var(--text-white);
       text-decoration: none;
     }
   }
   & ul a {
     font-size: 14px;
     margin-right: 10px;
-    color: #6c6c6c;
+    color: var(--text-gray);
     text-decoration: none;
+    font-weight: 400;
   }
   & ul a.github {
-    color: #ffffff;
+    color: var(--text-white);
     margin-right: 0;
   }
   & ul .active {
-    color: #5090d3;
+    color: var(--text-white);
+    font-weight: 500;
   }
 `;
 
