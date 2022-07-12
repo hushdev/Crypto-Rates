@@ -12,7 +12,7 @@ const Button = ({ children, ...props }) => {
 const StyledButton = styled.button`
   background-color: var(--blue);
   padding: 10px 15px;
-  color: var(--text-white);
+  color: #ffffff;
   border-radius: 10px;
   border: 0;
 `;

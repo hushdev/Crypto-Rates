@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+
+import ThemeToggler from "./ThemeToggler";
 import Container from "./Container";
 import { NavLink } from "react-router-dom";
 import Row from "./Row";
@@ -9,7 +11,11 @@ const Navbar = () => {
   return (
     <StyledNavbar>
       <Container>
-        <Row justifyContent="space-between" alignItems="center" padding="0 15px">
+        <Row
+          justifyContent="space-between"
+          alignItems="center"
+          padding="0 15px"
+        >
           <div className="logo">
             <NavLink to="/">Crypto Rates</NavLink>
           </div>
@@ -18,6 +24,7 @@ const Navbar = () => {
             <NavLink to="/dashboard">Dashboard</NavLink>
             <NavLink to="/about">About</NavLink>
             <NavLink to="/blog">Blog</NavLink>
+            <ThemeToggler />
             <Button>
               <a
                 className="github"
@@ -42,10 +49,15 @@ const StyledNavbar = styled.div`
   margin-bottom: 20px;
   & .logo {
     font-size: 16px;
+    font-weight: 500;
     a {
       color: var(--text-white);
       text-decoration: none;
     }
+  }
+  & ul {
+    display: flex;
+    align-items: center;
   }
   & ul a {
     font-size: 14px;
@@ -55,7 +67,7 @@ const StyledNavbar = styled.div`
     font-weight: 400;
   }
   & ul a.github {
-    color: var(--text-white);
+    color: #ffffff;
     margin-right: 0;
   }
   & ul .active {
