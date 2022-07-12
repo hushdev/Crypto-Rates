@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Footer = () => {
   return (
     <StyledFooter>
-      Coded with ❤️ by{" "}
+      Coded with ❤️ by&nbsp;
       <a href="https://github.com/hushdev" target="_blank" rel="noreferrer">
         Ildar Anikin
       </a>

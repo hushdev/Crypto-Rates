@@ -17,6 +17,7 @@ const Navbar = () => {
             <NavLink to="/">Rates</NavLink>
             <NavLink to="/dashboard">Dashboard</NavLink>
             <NavLink to="/about">About</NavLink>
+            <NavLink to="/blog">Blog</NavLink>
             <Button>
               <a
                 className="github"
