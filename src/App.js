@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
+import { Routes, Route, useLocation } from "react-router-dom";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+
+import Container from "./components/UI/Container";
+import Navbar from "./components/UI/Navbar";
+import Footer from "./components/UI/Footer";
+import About from "./views/About";
+import Dashboard from "./views/Dashboard";
+import Graph from "./views/Graph";
+import Rates from "./views/Rates";
+
+const App = () => {
+  const location = useLocation();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+
+      <Container>
+        <TransitionGroup component={null}>
+          <CSSTransition key={location.key} classNames="fade" timeout={300}>
+            <Routes>
+              <Route path="/" element={<Rates />} exac />
+              <Route path="/graph" element={<Graph />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/about" element={<About />} />
+            </Routes>
+          </CSSTransition>
+        </TransitionGroup>
+      </Container>
+
+      <Footer/>
     </div>
   );
-}
+};
 
 export default App;
