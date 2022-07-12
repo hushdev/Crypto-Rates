@@ -20,7 +20,7 @@ const Navbar = () => {
         >
           <div className="logo">
             <img src={Logo} alt="Crypto Rates Logo"/>
-            <NavLink to="/">Crypto Rates</NavLink>
+            <NavLink to="/">CryptoRates</NavLink>
           </div>
           <ul>
             <NavLink to="/">Rates</NavLink>
