@@ -1,9 +1,12 @@
 import React from "react";
 import Card from "../components/UI/Card";
+import Title from "../components/UI/Title";
 
 const Blog = () => {
   return (
-    <Card>BLOG</Card>
+    <Card>
+      <Title size={3}>Blog</Title>
+    </Card>
   );
 }
 
