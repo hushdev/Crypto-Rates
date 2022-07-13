@@ -16,10 +16,9 @@ const Navbar = () => {
         <Row
           justifyContent="space-between"
           alignItems="center"
-          padding="0 15px"
         >
           <div className="logo">
-            <img src={Logo} alt="Crypto Rates Logo"/>
+            <img src={Logo} alt="Crypto Rates Logo" />
             <NavLink to="/">CryptoRates</NavLink>
           </div>
           <ul>
@@ -27,8 +26,8 @@ const Navbar = () => {
             <NavLink to="/dashboard">Dashboard</NavLink>
             <NavLink to="/about">About</NavLink>
             <NavLink to="/blog">Blog</NavLink>
-            <ThemeToggler />
-            <Button>
+            <ThemeToggler className="nav-theme-toggler"/>
+            <Button className="github-btn">
               <a
                 className="github"
                 href="https://github.com/hushdev/Crypto-Rates"
@@ -47,9 +46,12 @@ const Navbar = () => {
 
 const StyledNavbar = styled.div`
   background-color: var(--gray);
-  padding: 10px 0;
+  padding: 10px 15px;
   border-bottom: 1px solid var(--gray-decor);
   margin-bottom: 20px;
+  @media (max-width:555px) {
+    padding: 10px 0;
+  }
   & .logo {
     font-size: 16px;
     font-weight: 500;
@@ -64,20 +66,36 @@ const StyledNavbar = styled.div`
     a {
       color: var(--text-white);
       text-decoration: none;
+      @media (max-width: 555px) {
+        display: none;
+      }
     }
   }
   & ul {
     display: flex;
     align-items: center;
   }
+  .nav-theme-toggler {
+    @media (max-width: 450px) {
+      margin-right: 0;
+    }
+  }
   & ul a {
     font-size: 14px;
     margin-right: 10px;
+    @media (max-width: 330px) {
+      margin-right: 5px;
+    }
     color: var(--text-gray);
     text-decoration: none;
     font-weight: 400;
   }
-  & ul a.github {
+  & ul .github-btn {
+    @media (max-width: 450px) {
+      display: none;
+    }
+  }
+  & ul .github-btn a.github {
     color: #ffffff;
     margin-right: 0;
   }

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Sun from "../../assets/svg/sun.svg";
 import Moon from "../../assets/svg/moon.svg";
 
-const ThemeToggler = () => {
+const ThemeToggler = (props) => {
   const [theme, setTheme] = useState("dark");
 
   const toggleTheme = () => {
@@ -25,7 +25,7 @@ const ThemeToggler = () => {
   };
 
   return (
-    <StyledThemeToggler onClick={toggleTheme} theme={theme}>
+    <StyledThemeToggler onClick={toggleTheme} theme={theme} className={props.className}>
       <div className="round">
         <img src={theme === "dark" ? Moon : Sun} alt="" />
       </div>
@@ -41,7 +41,6 @@ const StyledThemeToggler = styled.div`
     props.theme === "dark" ? "#ffffff" : "#444444"};
   border: 1px solid var(--gray-decor);
   padding: 3px;
-  transition: all 0.3s ease-in-out;
   margin-right: 10px;
   &:hover {
     cursor: pointer;
@@ -50,7 +49,7 @@ const StyledThemeToggler = styled.div`
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s linear;
     transform: translateX(
       ${(props) => (props.theme === "light" ? "20px" : "0")}
     );
