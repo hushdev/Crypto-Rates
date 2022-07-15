@@ -10,6 +10,7 @@ const ThemeToggler = (props) => {
     if (theme === "dark") {
       setTheme("light");
       document.documentElement.style.setProperty("--gray", "#f3f4f6");
+      document.documentElement.style.setProperty("--gray-transparent", "#f3f4f685");
       document.documentElement.style.setProperty("--gray-decor", "#e6e6e6");
       document.documentElement.style.setProperty("--dark", "#ffffff");
       document.documentElement.style.setProperty("--text-white", "#000000");
@@ -17,6 +18,7 @@ const ThemeToggler = (props) => {
     } else {
       setTheme("dark");
       document.documentElement.style.setProperty("--gray", "#1e1e1e");
+      document.documentElement.style.setProperty("--gray-transparent", "#1e1e1e92");
       document.documentElement.style.setProperty("--gray-decor", "#272828");
       document.documentElement.style.setProperty("--dark", "#121212");
       document.documentElement.style.setProperty("--text-white", "#e2e2e2");

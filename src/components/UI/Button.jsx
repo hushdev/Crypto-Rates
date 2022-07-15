@@ -13,8 +13,13 @@ const StyledButton = styled.button`
   background-color: var(--blue);
   padding: 10px 15px;
   color: #ffffff;
+  border: 0;
   border-radius: 10px;
   border: 0;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--blue-hover);
+  }
 `;
 
 export default Button;

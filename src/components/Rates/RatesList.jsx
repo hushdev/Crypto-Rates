@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Button from "../UI/Button";
 import Card from "../UI/Card";
 
 const RatesList = ({ list, ...props }) => {
@@ -11,13 +12,17 @@ const RatesList = ({ list, ...props }) => {
           <span>Name</span>
           <span>Code</span>
           <span>Price</span>
+          <span>Action</span>
         </li>
         {list.map((item) => (
           <li key={item.id}>
-            <img src={item.image} alt={item.name} />
+            <div className="image">
+              <img src={item.image} alt={item.name} />
+            </div>
             <span>{item.name}</span>
             <span>{item.symbol}</span>
             <span>${item.ath}</span>
+            <Button>Go to graph</Button>
           </li>
         ))}
       </StyledRatesList>
@@ -26,9 +31,14 @@ const RatesList = ({ list, ...props }) => {
 };
 
 const StyledRatesList = styled.ul`
+  min-width: 450px;
   & li.heading {
-    background-color: var(--gray-decor);
-    border-radius: 10px;
+    span {
+      width: 100%;
+      max-width: 101px;
+      text-align: left;
+      color: var(--blue);
+    }
   }
   & li {
     display: flex;
@@ -36,20 +46,22 @@ const StyledRatesList = styled.ul`
     align-items: center;
     padding: 10px;
     border-bottom: 1px solid var(--gray-decor);
-    &:hover {
-      background-color: var(--gray-decor);
-      border-radius: 10px;
-    }
     &:last-child {
       border-bottom: 0;
     }
-    img {
+    .image img {
       width: 30px;
       height: auto;
     }
     span {
       color: var(--text-white);
-      text-align: center;
+    }
+    span,
+    button,
+    .image {
+      width: 100%;
+      max-width: 101px;
+      text-align: left;
     }
   }
 `;

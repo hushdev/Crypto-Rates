@@ -10,6 +10,7 @@ const StyledCard = styled.div`
   border-radius: 10px;
   background-color: var(--gray);
   padding: 15px;
+  overflow-x: scroll;
 `;
 
 export default Card;

@@ -45,7 +45,8 @@ const Navbar = () => {
 };
 
 const StyledNavbar = styled.div`
-  background-color: var(--gray);
+  background-color: var(--gray-transparent);
+  backdrop-filter: blur(5px);
   padding: 10px 15px;
   border-bottom: 1px solid var(--gray-decor);
   margin-bottom: 20px;
