@@ -4,10 +4,11 @@ import Title from "../components/UI/Title";
 
 const Dashboard = () => {
   return (
-    <Card>
+    <>
       <Title size={3}>Dashboard</Title>
-    </Card>
-  )
+      <Card></Card>
+    </>
+  );
 };
 
 export default Dashboard;

@@ -4,9 +4,10 @@ import Title from "../components/UI/Title";
 
 const Graph = () => {
   return (
-    <Card>
+    <>
       <Title size={3}>Graph</Title>
-    </Card>
+      <Card></Card>
+    </>
   );
 };
 

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../UI/Button";
+import { NavLink } from "react-router-dom";
 import Card from "../UI/Card";
 
 const CoinsList = ({ list, ...props }) => {
@@ -14,19 +14,21 @@ const CoinsList = ({ list, ...props }) => {
           <span>Current Price</span>
           <span>ATH</span>
           <span>Mkt Cap</span>
-          <span>Action</span>
+          {/* <span>Action</span> */}
         </li>
         {list.map((item) => (
           <li key={item.id}>
             <span className="image">
               <img src={item.image} alt={item.name} />
             </span>
-            <span className="name">{item.name}</span>
+            <span className="name">
+              <NavLink to={`graph/${item.id}`}>{item.name}</NavLink>
+            </span>
             <span className="symbol">{item.symbol}</span>
             <span>${item.current_price}</span>
             <span>${item.ath}</span>
             <span>${item.market_cap}</span>
-            <Button>Go to graph</Button>
+            {/* <Button>Go to graph</Button> */}
           </li>
         ))}
       </StyledCoinsList>
@@ -72,9 +74,15 @@ const StyledCoinsList = styled.ul`
     }
     span.name {
       font-weight: 600;
+      a {
+        color: var(--text-white);
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
-    span,
-    button {
+    span {
       width: 100%;
       max-width: 104px;
       text-align: left;
