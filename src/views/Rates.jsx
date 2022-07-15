@@ -7,7 +7,7 @@ import RatesList from "../components/Rates/RatesList";
 import ErrorMessage from "../components/UI/ErrorMessage";
 
 const Rates = ({ baseUrl, ...props }) => {
-  const { status, data, error } = useQuery("rates", getRates);
+  const { status, data, error } = useQuery("rates", () => getRates(1));
   console.log(data);
   return (
     <>

@@ -8,20 +8,24 @@ const RatesList = ({ list, ...props }) => {
     <Card>
       <StyledRatesList>
         <li className="heading">
-          <span>Picture</span>
-          <span>Name</span>
-          <span>Code</span>
-          <span>Price</span>
+          <span className="image">Coin</span>
+          <span></span>
+          <span></span>
+          <span>Current Price</span>
+          <span>ATH</span>
+          <span>Mkt Cap</span>
           <span>Action</span>
         </li>
         {list.map((item) => (
           <li key={item.id}>
-            <div className="image">
+            <span className="image">
               <img src={item.image} alt={item.name} />
-            </div>
-            <span>{item.name}</span>
-            <span>{item.symbol}</span>
+            </span>
+            <span className="name">{item.name}</span>
+            <span className="symbol">{item.symbol}</span>
+            <span>${item.current_price}</span>
             <span>${item.ath}</span>
+            <span>${item.market_cap}</span>
             <Button>Go to graph</Button>
           </li>
         ))}
@@ -31,11 +35,14 @@ const RatesList = ({ list, ...props }) => {
 };
 
 const StyledRatesList = styled.ul`
-  min-width: 450px;
+  min-width: 920px;
   & li.heading {
+    span.image {
+      max-width: 55px;
+    }
     span {
       width: 100%;
-      max-width: 101px;
+      max-width: 104px;
       text-align: left;
       color: var(--blue);
     }
@@ -49,18 +56,27 @@ const StyledRatesList = styled.ul`
     &:last-child {
       border-bottom: 0;
     }
-    .image img {
-      width: 30px;
-      height: auto;
+    span.image {
+      max-width: 55px;
+      img {
+        width: 30px;
+        height: auto;
+      }
     }
     span {
       color: var(--text-white);
+      font-size: 14px;
+    }
+    span.symbol {
+      text-transform: uppercase;
+    }
+    span.name {
+      font-weight: 600;
     }
     span,
-    button,
-    .image {
+    button {
       width: 100%;
-      max-width: 101px;
+      max-width: 104px;
       text-align: left;
     }
   }
