@@ -23,7 +23,7 @@ const StyledTitle = styled.div`
   & h6 {
     color: var(--text-white);
     font-weight: 500;
-    margin-bottom: 8px; 
+    margin-bottom: 25px; 
   }
 `;
 

@@ -22,7 +22,7 @@ const Navbar = () => {
             <NavLink to="/">CryptoRates</NavLink>
           </div>
           <ul>
-            <NavLink to="/">Rates</NavLink>
+            <NavLink to="/">Coins</NavLink>
             <NavLink to="/dashboard">Dashboard</NavLink>
             <NavLink to="/about">About</NavLink>
             <NavLink to="/blog">Blog</NavLink>
@@ -49,7 +49,7 @@ const StyledNavbar = styled.div`
   backdrop-filter: blur(5px);
   padding: 10px 15px;
   border-bottom: 1px solid var(--gray-decor);
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   position: sticky;
   top: 0;
   left: 0;

@@ -3,10 +3,10 @@ import styled from "styled-components";
 import Button from "../UI/Button";
 import Card from "../UI/Card";
 
-const RatesList = ({ list, ...props }) => {
+const CoinsList = ({ list, ...props }) => {
   return (
     <Card>
-      <StyledRatesList>
+      <StyledCoinsList>
         <li className="heading">
           <span className="image">Coin</span>
           <span></span>
@@ -29,12 +29,12 @@ const RatesList = ({ list, ...props }) => {
             <Button>Go to graph</Button>
           </li>
         ))}
-      </StyledRatesList>
+      </StyledCoinsList>
     </Card>
   );
 };
 
-const StyledRatesList = styled.ul`
+const StyledCoinsList = styled.ul`
   min-width: 920px;
   & li.heading {
     span.image {
@@ -82,4 +82,4 @@ const StyledRatesList = styled.ul`
   }
 `;
 
-export default RatesList;
+export default CoinsList;

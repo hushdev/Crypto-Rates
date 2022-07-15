@@ -9,7 +9,7 @@ import Footer from "./components/UI/Footer";
 import About from "./views/About";
 import Dashboard from "./views/Dashboard";
 import Graph from "./views/Graph";
-import Rates from "./views/Rates";
+import Coins from "./views/Coins";
 import Blog from "./views/Blog";
 import BlogPost from "./views/BlogPost";
 
@@ -26,7 +26,7 @@ const App = () => {
         <TransitionGroup component={null}>
           <CSSTransition key={location.key} classNames="fade" timeout={300}>
             <Routes>
-              <Route path="/" element={<Rates baseUrl={baseUrl} />} exac />
+              <Route path="/" element={<Coins baseUrl={baseUrl} />} exac />
               <Route path="/graph" element={<Graph />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/about" element={<About />} />
