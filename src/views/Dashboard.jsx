@@ -4,10 +4,10 @@ import Title from "../components/UI/Title";
 
 const Dashboard = () => {
   return (
-    <>
-      <Title size={3}>Dashboard</Title>
+    <div>
+      <Title size={2}>Dashboard</Title>
       <Card></Card>
-    </>
+    </div>
   );
 };
 

@@ -4,10 +4,10 @@ import Title from "../components/UI/Title";
 
 const BlogPost = () => {
   return (
-    <>
-      <Title size={3}>Blog post</Title>
+    <div>
+      <Title size={2}>Blog post</Title>
       <Card></Card>
-    </>
+    </div>
   );
 };
 

@@ -4,8 +4,8 @@ import Title from "../components/UI/Title";
 
 const About = () => {
   return (
-    <>
-      <Title size={3}>About</Title>
+    <div>
+      <Title size={2}>About</Title>
       <Card>
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus
@@ -13,7 +13,7 @@ const About = () => {
           nulla odio voluptatum, fugiat vitae placeat sint.
         </p>
       </Card>
-    </>
+    </div>
   );
 };
 
