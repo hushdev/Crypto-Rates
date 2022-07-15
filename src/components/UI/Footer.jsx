@@ -13,9 +13,8 @@ const Footer = () => {
 };
 
 const StyledFooter = styled.div`
-  position: fixed;
-  bottom: 10px;
-  right: 15px;
+  text-align: center;
+  padding: 15px;
   color: var(--text-white);
   font-size: 12px;
   & a {

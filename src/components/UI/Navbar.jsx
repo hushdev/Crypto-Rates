@@ -49,6 +49,9 @@ const StyledNavbar = styled.div`
   padding: 10px 15px;
   border-bottom: 1px solid var(--gray-decor);
   margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+  left: 0;
   @media (max-width:555px) {
     padding: 10px 0;
   }
