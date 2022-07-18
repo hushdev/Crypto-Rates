@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import Card from "../UI/Card";
+import convertNumber from "../../utils/convert-number";
 
 const CoinsList = ({ list, ...props }) => {
   return (
@@ -14,7 +15,6 @@ const CoinsList = ({ list, ...props }) => {
           <span>Current Price</span>
           <span>ATH</span>
           <span>Mkt Cap</span>
-          {/* <span>Action</span> */}
         </li>
         {list.map((item) => (
           <li key={item.id}>
@@ -25,10 +25,9 @@ const CoinsList = ({ list, ...props }) => {
               <NavLink to={`graph/${item.id}`}>{item.name}</NavLink>
             </span>
             <span className="symbol">{item.symbol}</span>
-            <span>${item.current_price}</span>
-            <span>${item.ath}</span>
-            <span>${item.market_cap}</span>
-            {/* <Button>Go to graph</Button> */}
+            <span>$ {convertNumber(item.current_price)}</span>
+            <span>$ {convertNumber(item.ath)}</span>
+            <span>$ {convertNumber(item.market_cap)}</span>
           </li>
         ))}
       </StyledCoinsList>
@@ -37,7 +36,7 @@ const CoinsList = ({ list, ...props }) => {
 };
 
 const StyledCoinsList = styled.ul`
-  min-width: 920px;
+  min-width: 700px;
   & li.heading {
     span.image {
       max-width: 55px;
