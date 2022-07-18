@@ -12,6 +12,7 @@ import Graph from "./views/Graph";
 import Coins from "./views/Coins";
 import Blog from "./views/Blog";
 import BlogPost from "./views/BlogPost";
+import styled from "styled-components";
 
 const App = () => {
   const location = useLocation();
@@ -19,7 +20,7 @@ const App = () => {
   const baseUrl = process.env.REACT_APP_API;
 
   return (
-    <div className="App">
+    <StyledApp>
       <QueryClientProvider client={queryClient}>
       <Navbar />
       <Container>
@@ -38,8 +39,15 @@ const App = () => {
       </Container>
       <Footer />
       </QueryClientProvider>
-    </div>
+    </StyledApp>
   );
 };
+
+const StyledApp = styled.div`
+  min-height: 100vh;
+  height: 100%;
+  position: relative;
+  padding-bottom: 45px;
+`;
 
 export default App;

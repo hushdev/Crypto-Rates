@@ -17,6 +17,10 @@ const StyledFooter = styled.div`
   padding: 15px;
   color: var(--text-white);
   font-size: 12px;
+  position: absolute;
+  top: calc(100% - 46px);
+  left: 50%;
+  transform: translateX(-50%);
   & a {
     color: var(--text-white);
     text-decoration: none;

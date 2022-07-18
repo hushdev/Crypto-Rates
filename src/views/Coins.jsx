@@ -9,7 +9,7 @@ import CoinsSearch from "../components/Coins/CoinsSearch";
 
 const Rates = ({ baseUrl, ...props }) => {
   const { status, data, error } = useQuery("rates", () => getRates(1));
-  console.log(data);
+  
   return (
     <div>
       <Title size={2}>Coins</Title>
