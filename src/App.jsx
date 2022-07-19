@@ -37,15 +37,15 @@ const App = () => {
           </CSSTransition>
         </TransitionGroup>
       </Container>
-      <Footer />
+      {/* <Footer /> */}
       </QueryClientProvider>
     </StyledApp>
   );
 };
 
 const StyledApp = styled.div`
-  min-height: 100vh;
-  height: 100%;
+  /* min-height: 100vh; */
+  /* height: 100%; */
   position: relative;
   padding-bottom: 45px;
 `;

@@ -1,16 +1,24 @@
 import React from "react";
-import Card from "../components/UI/Card";
 import GoBackBtn from "../components/UI/GoBackBtn";
-import Title from "../components/UI/Title";
+import { useQuery } from "react-query";
+import { getCoinInfo } from "../api/queries";
+import { useParams } from "react-router-dom";
+import Loader from "../components/UI/Loader";
+import GraphInfo   from "../components/Graph";
+import ErrorMessage from "../components/UI/ErrorMessage";
 
 const Graph = () => {
+  const coin = useParams().id;
+  const { status, data, error } = useQuery("coinInfo", () => getCoinInfo(coin));
+
   return (
     <div>
       <GoBackBtn />
-      <Title size={2}>Graph</Title>
-      <Card></Card>
+      {status === "loading" && <Loader />}
+      {error && <ErrorMessage>{error.message}</ErrorMessage>}
+      {data && <GraphInfo coin={data} />}
     </div>
   );
-};
+};  
 
 export default Graph;

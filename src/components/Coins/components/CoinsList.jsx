@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import Card from "../UI/Card";
-import convertNumber from "../../utils/convert-number";
+import Card from "../../UI/Card";
+import convertNumber from "../../../utils/convert-number";
 
 const CoinsList = ({ list, ...props }) => {
   return (

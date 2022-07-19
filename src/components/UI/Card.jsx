@@ -7,6 +7,7 @@ const Card = ({ children, ...props }) => {
 
 const StyledCard = styled.div`
   border: 1px solid var(--gray-decor);
+  border-bottom: 5px solid var(--gray-decor);
   border-radius: 10px;
   background-color: var(--gray);
   padding: 15px;

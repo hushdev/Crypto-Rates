@@ -17,10 +17,10 @@ const Navbar = () => {
           justifyContent="space-between"
           alignItems="center"
         >
-          <div className="logo">
+          <NavLink to="/" className="logo">
             <img src={Logo} alt="Crypto Rates Logo" />
-            <NavLink to="/">CryptoRates</NavLink>
-          </div>
+            <span>CryptoRates</span>
+          </NavLink>
           <ul>
             <NavLink to="/">Coins</NavLink>
             <NavLink to="/dashboard">Dashboard</NavLink>
@@ -61,15 +61,14 @@ const StyledNavbar = styled.div`
     font-weight: 500;
     display: flex;
     align-items: center;
-
+    text-decoration: none;
     img {
       width: 30px;
       height: auto;
       margin-right: 5px;
     }
-    a {
+    span {
       color: var(--text-white);
-      text-decoration: none;
       @media (max-width: 555px) {
         display: none;
       }

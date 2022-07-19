@@ -7,10 +7,14 @@ const getRates = async (page) => {
     );
     return response.json();
   },
+  getCoinInfo = async (coin) => {
+    const response = await fetch(`${cryptoURL}/coins/${coin}`);
+    return response.json();
+  },
   getNews = async (page) => {
     // TODO - work on thi bug
     const response = await fetch('');
     return response.json();
   };
 
-export { getRates, getNews };
+export { getRates, getCoinInfo, getNews };
