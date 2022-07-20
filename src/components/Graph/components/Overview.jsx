@@ -32,31 +32,31 @@ const Overview = ({ coin }) => {
           {/* Quick information */}
           <div className="additional-info">
             <span className="heading">Market Cap</span>
-            <span className="value">
+            <Chip className="value">
               ${convertNumber(coin.market_data.market_cap.usd)}
-            </span>
+            </Chip>
           </div>
           <div className="additional-info">
             <span className="heading">Market Cap Rank</span>
-            <span className="value">#{coin.market_cap_rank}</span>
+            <Chip className="value">#{coin.market_cap_rank}</Chip>
           </div>
           <div className="additional-info">
             <span className="heading">All-time hight</span>
-            <span className="value">
+            <Chip className="value">
               ${convertNumber(coin.market_data.ath.usd)}
-            </span>
+            </Chip>
           </div>
           <div className="additional-info">
             <span className="heading">All-time low</span>
-            <span className="value">
+            <Chip className="value">
               ${convertNumber(coin.market_data.atl.usd)}
-            </span>
+            </Chip>
           </div>
           <div className="additional-info">
             <span className="heading">Total Volume</span>
-            <span className="value">
+            <Chip className="value">
               ${convertNumber(coin.market_data.total_volume.usd)}
-            </span>
+            </Chip>
           </div>
           {/* Chip links to homepage, git and reddit */}
           <div className="chips-wrap">
@@ -181,8 +181,9 @@ const StyledOverview = styled.div`
       .additional-info {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         width: 300px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         .heading {
           color: var(--text-gray);
         }

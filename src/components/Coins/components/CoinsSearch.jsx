@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Input from "../../UI/Input";
 
-const CoinsSearch = () => {
+const CoinsSearch = ({onChange}) => {
   const [inputValue, setInputValue] = useState("");
 
   const changeHandler = (e) => {
-    setInputValue(e.target.value); 
-    // api call here
-  };
-
+    setInputValue(e.target.value);
+    onChange(inputValue);   
+  }
+  
   return (
     <StyledCoinsSearch>
       <Input
-        placeholder={"Search"}
+        placeholder={"Type the name of currency"}
         value={inputValue}
         onChange={changeHandler}
         icon="search"

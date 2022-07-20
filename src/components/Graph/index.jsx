@@ -1,7 +1,7 @@
 import React from "react";
 import Overview from "./components/Overview";
 
-const index = ({ coin }) => {
+export default ({ coin }) => {
   return (
     <>
       <Overview coin={coin} />
@@ -9,4 +9,3 @@ const index = ({ coin }) => {
   );
 };
 
-export default index;

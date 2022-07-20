@@ -1,37 +1,53 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import Card from "../../UI/Card";
 import convertNumber from "../../../utils/convert-number";
+import ErrorMessage from "../../UI/ErrorMessage";
 
-const CoinsList = ({ list, ...props }) => {
+const CoinsList = ({ list, searchQuery, ...props }) => {
+  const [filteredList, setFilteredList] = useState([]);
+
+  useEffect(() => {
+    setFilteredList(
+      list.filter((coin) =>
+        coin.name.toLowerCase().includes(searchQuery.toLowerCase().trim())
+      )
+    );
+  }, [searchQuery]);
+
   return (
-    <Card>
-      <StyledCoinsList>
-        <li className="heading">
-          <span className="image">Coin</span>
-          <span></span>
-          <span></span>
-          <span>Current Price</span>
-          <span>ATH</span>
-          <span>Mkt Cap</span>
-        </li>
-        {list.map((item) => (
-          <li key={item.id}>
-            <span className="image">
-              <img src={item.image} alt={item.name} />
-            </span>
-            <span className="name">
-              <NavLink to={`graph/${item.id}`}>{item.name}</NavLink>
-            </span>
-            <span className="symbol">{item.symbol}</span>
-            <span>$ {convertNumber(item.current_price)}</span>
-            <span>$ {convertNumber(item.ath)}</span>
-            <span>$ {convertNumber(item.market_cap)}</span>
-          </li>
-        ))}
-      </StyledCoinsList>
-    </Card>
+    <>
+      {filteredList.length > 0 && (
+        <Card>
+          <StyledCoinsList>
+            <li className="heading">
+              <span className="image">Coin</span>
+              <span></span>
+              <span></span>
+              <span>Current Price</span>
+              <span>ATH</span>
+              <span>Mkt Cap</span>
+            </li>
+            {filteredList.map((item, i) => (
+              <li key={item.id}>
+                <span className="image">
+                  <img src={item.image} alt={item.name} />
+                </span>
+                <span className="name">
+                  <NavLink to={`graph/${item.id}`}>{item.name}</NavLink>
+                </span>
+                <span className="symbol">{item.symbol}</span>
+                <span>$ {convertNumber(item.current_price)}</span>
+                <span>$ {convertNumber(item.ath)}</span>
+                <span>$ {convertNumber(item.market_cap)}</span>
+              </li>
+            ))}
+          </StyledCoinsList>
+        </Card>
+      )}
+      {filteredList.length === 0 && <ErrorMessage>Nothing found</ErrorMessage>}
+    </>
   );
 };
 
@@ -61,7 +77,7 @@ const StyledCoinsList = styled.ul`
     }
     span.image {
       max-width: 55px;
-        img {
+      img {
         width: 30px;
         height: auto;
       }

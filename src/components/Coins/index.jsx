@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import CoinsList from "./components/CoinsList";
 import CoinsSearch from "./components/CoinsSearch";
 
-const index = ({ list }) => {
+export default ({ list }) => {
+  const [searchQuery, setSearchQuery] = useState('');
+  
   return (
     <>
-      <CoinsSearch/>
-      <CoinsList list={list}/>
+      <CoinsSearch onChange={setSearchQuery}/>
+      <CoinsList list={list} searchQuery={searchQuery}/>
     </>
   );
 };
 
-export default index;
