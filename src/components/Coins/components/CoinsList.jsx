@@ -46,6 +46,8 @@ const StyledCoinsList = styled.ul`
       max-width: 104px;
       text-align: left;
       color: var(--blue);
+      font-weight: 500;
+      padding-bottom: 15px;
     }
   }
   & li {
@@ -59,20 +61,20 @@ const StyledCoinsList = styled.ul`
     }
     span.image {
       max-width: 55px;
-      img {
+        img {
         width: 30px;
         height: auto;
       }
     }
     span {
-      color: var(--text-white);
+      color: var(--text-gray);
       font-size: 14px;
+      font-weight: 400;
     }
     span.symbol {
       text-transform: uppercase;
     }
     span.name {
-      font-weight: 600;
       a {
         color: var(--text-white);
         text-decoration: none;

@@ -5,7 +5,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import Container from "./components/UI/Container";
 import Navbar from "./components/UI/Navbar";
-import Footer from "./components/UI/Footer";
+// import Footer from "./components/UI/Footer";
 import About from "./views/About";
 import Dashboard from "./views/Dashboard";
 import Graph from "./views/Graph";

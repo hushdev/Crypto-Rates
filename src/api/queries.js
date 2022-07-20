@@ -1,5 +1,5 @@
 const cryptoURL = "https://api.coingecko.com/api/v3";
-const newsURL = "https://cryptopanic.com/api/v1";
+// const newsURL = "https://cryptopanic.com/api/v1";
 
 const getRates = async (page) => {
     const response = await fetch(
