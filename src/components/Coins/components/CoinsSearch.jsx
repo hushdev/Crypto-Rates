@@ -13,7 +13,7 @@ const CoinsSearch = ({onChange}) => {
   return (
     <StyledCoinsSearch>
       <Input
-        placeholder={"Type the name of currency"}
+        placeholder={"Search by name"}
         value={inputValue}
         onChange={changeHandler}
         icon="search"

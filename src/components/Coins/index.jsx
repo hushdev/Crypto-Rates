@@ -4,7 +4,7 @@ import CoinsSearch from "./components/CoinsSearch";
 
 export default ({ list }) => {
   const [searchQuery, setSearchQuery] = useState('');
-  
+
   return (
     <>
       <CoinsSearch onChange={setSearchQuery}/>

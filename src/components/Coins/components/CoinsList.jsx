@@ -6,7 +6,7 @@ import convertNumber from "../../../utils/convert-number";
 import ErrorMessage from "../../UI/ErrorMessage";
 
 const CoinsList = ({ list, searchQuery, ...props }) => {
-  const [filteredList, setFilteredList] = useState([]);
+  const [filteredList, setFilteredList] = useState([...list]);
 
   useEffect(() => {
     setFilteredList(
@@ -14,7 +14,7 @@ const CoinsList = ({ list, searchQuery, ...props }) => {
         coin.name.toLowerCase().includes(searchQuery.toLowerCase().trim())
       )
     );
-  }, [searchQuery]);
+  }, [searchQuery, list]);
 
   return (
     <>
@@ -30,7 +30,7 @@ const CoinsList = ({ list, searchQuery, ...props }) => {
               <span>Mkt Cap</span>
             </li>
             {filteredList.map((item, i) => (
-              <li key={item.id}>
+              <li key={i}>
                 <span className="image">
                   <img src={item.image} alt={item.name} />
                 </span>

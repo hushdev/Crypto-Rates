@@ -7,7 +7,7 @@ import Loader from "../components/UI/Loader";
 import GraphInfo from "../components/Graph";
 import ErrorMessage from "../components/UI/ErrorMessage";
 
-const Graph = ({}) => {
+const Graph = () => {
   const coin = useParams().id;
   const { status, data, error } = useQuery("coinInfo", () => getCoinInfo(coin));
 

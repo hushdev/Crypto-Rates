@@ -8,7 +8,7 @@ const ThemeToggler = (props) => {
 
   const toggleTheme = () => {
     var elems = document.querySelectorAll("*");
-    elems.forEach((elem) => (elem.style.transition = ".3s ease-in-out"));
+    elems.forEach((elem) => (elem.style.transition = ".2s ease"));
 
     if (theme === "dark") {
       setTheme("light");
@@ -38,7 +38,7 @@ const ThemeToggler = (props) => {
     setTimeout(() => {
       elems.forEach((elem) => (elem.style.transition = "0s"));      
       clearTimeout();
-    }, 300);
+    }, 200);
   };
 
   return (
