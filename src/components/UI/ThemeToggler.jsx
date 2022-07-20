@@ -7,11 +7,17 @@ const ThemeToggler = (props) => {
   const [theme, setTheme] = useState("dark");
 
   const toggleTheme = () => {
+    var elems = document.querySelectorAll("*");
+    elems.forEach((elem) => (elem.style.transition = ".3s ease-in-out"));
+
     if (theme === "dark") {
       setTheme("light");
       document.documentElement.style.setProperty("--gray", "#f3f4f6");
       document.documentElement.style.setProperty("--gray-light", "#dfdfdf");
-      document.documentElement.style.setProperty("--gray-transparent", "#f3f4f685");
+      document.documentElement.style.setProperty(
+        "--gray-transparent",
+        "#f3f4f685"
+      );
       document.documentElement.style.setProperty("--gray-decor", "#e6e6e6");
       document.documentElement.style.setProperty("--dark", "#ffffff");
       document.documentElement.style.setProperty("--text-white", "#000000");
@@ -20,16 +26,27 @@ const ThemeToggler = (props) => {
       setTheme("dark");
       document.documentElement.style.setProperty("--gray", "#1e1e1e");
       document.documentElement.style.setProperty("--gray-light", "#393939");
-      document.documentElement.style.setProperty("--gray-transparent", "#1e1e1e92");
+      document.documentElement.style.setProperty(
+        "--gray-transparent",
+        "#1e1e1e92"
+      );
       document.documentElement.style.setProperty("--gray-decor", "#272828");
       document.documentElement.style.setProperty("--dark", "#121212");
       document.documentElement.style.setProperty("--text-white", "#e2e2e2");
       document.documentElement.style.setProperty("--text-gray", "#a5a59c");
     }
+    setTimeout(() => {
+      elems.forEach((elem) => (elem.style.transition = "0s"));      
+      clearTimeout();
+    }, 300);
   };
 
   return (
-    <StyledThemeToggler onClick={toggleTheme} theme={theme} className={props.className}>
+    <StyledThemeToggler
+      onClick={toggleTheme}
+      theme={theme}
+      className={props.className}
+    >
       <div className="round">
         <img src={theme === "dark" ? Moon : Sun} alt="" />
       </div>
