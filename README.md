@@ -6,8 +6,8 @@ Pet project to fetch crypto data, view graphs, dashboard and read the blog.
 React, react-query, react-router-dom, styled-components, sass (scss), react-transition-group.
 
 # API's
-https://api.coingecko.com
-https://min-api.cryptocompare.com
+1) https://api.coingecko.com
+2) https://min-api.cryptocompare.com
 
 # How to start?
 1) Clone this repository and open the root directory. Node JS have to be installed on your computer.

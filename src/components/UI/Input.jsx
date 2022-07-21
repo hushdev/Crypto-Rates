@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Input = ({ placeholder, className, type, value, onChange, icon, ...props}) => {
+const Input = ({ placeholder, className, type, value, onChange, icon, ...props }) => {
   let iconUrl = null;
   if (icon) {
     iconUrl = require(`../../assets/svg/${icon}.svg`);
@@ -23,8 +23,8 @@ const Input = ({ placeholder, className, type, value, onChange, icon, ...props})
 };
 
 const StyledInputWrap = styled.div`
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
   & input {
     padding: 10px;
     color: var(--text-white);

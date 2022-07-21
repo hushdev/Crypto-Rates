@@ -13,10 +13,7 @@ const Navbar = () => {
   return (
     <StyledNavbar>
       <Container>
-        <Row
-          justifyContent="space-between"
-          alignItems="center"
-        >
+        <Row justifyContent="space-between" alignItems="center">
           <NavLink to="/" className="logo">
             <img src={Logo} alt="Crypto Rates Logo" />
             <span>CryptoRates</span>
@@ -26,7 +23,7 @@ const Navbar = () => {
             <NavLink to="/dashboard">Dashboard</NavLink>
             <NavLink to="/about">About</NavLink>
             <NavLink to="/blog">Blog</NavLink>
-            <ThemeToggler className="nav-theme-toggler"/>
+            <ThemeToggler className="nav-theme-toggler" />
             <Button className="github-btn">
               <a
                 className="github"
@@ -53,7 +50,7 @@ const StyledNavbar = styled.div`
   position: sticky;
   top: 0;
   left: 0;
-  @media (max-width:555px) {
+  @media (max-width: 555px) {
     padding: 10px 0;
   }
   & .logo {

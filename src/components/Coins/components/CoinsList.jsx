@@ -10,9 +10,7 @@ const CoinsList = ({ list, searchQuery, ...props }) => {
 
   useEffect(() => {
     setFilteredList(
-      list.filter((coin) =>
-        coin.name.toLowerCase().includes(searchQuery.toLowerCase().trim())
-      )
+      list.filter((coin) => coin.name.toLowerCase().includes(searchQuery.toLowerCase().trim()))
     );
   }, [searchQuery, list]);
 

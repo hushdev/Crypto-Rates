@@ -14,9 +14,9 @@ const Graph = () => {
   return (
     <div>
       <GoBackBtn />
-          {status === "loading" && <Loader />}
-          {error && <ErrorMessage>{error.message}</ErrorMessage>}
-          {data && <GraphInfo coin={data} />}
+      {status === "loading" && <Loader />}
+      {error && <ErrorMessage>{error.message}</ErrorMessage>}
+      {data && <GraphInfo coin={data} />}
     </div>
   );
 };

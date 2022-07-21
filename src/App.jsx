@@ -22,22 +22,22 @@ const App = () => {
   return (
     <StyledApp>
       <QueryClientProvider client={queryClient}>
-      <Navbar />
-      <Container>
-        <TransitionGroup component={null}>
-          <CSSTransition key={location.key} classNames="fade" timeout={300}>
-            <Routes>
-              <Route path="/" element={<Coins baseUrl={baseUrl} />} exac />
-              <Route path="/graph/:id" element={<Graph />} />
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:postID" element={<BlogPost />} />
-            </Routes>
-          </CSSTransition>
-        </TransitionGroup>
-      </Container>
-      {/* <Footer /> */}
+        <Navbar />
+        <Container>
+          <TransitionGroup component={null}>
+            <CSSTransition key={location.key} classNames="fade" timeout={300}>
+              <Routes>
+                <Route path="/" element={<Coins baseUrl={baseUrl} />} exac />
+                <Route path="/graph/:id" element={<Graph />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:postID" element={<BlogPost />} />
+              </Routes>
+            </CSSTransition>
+          </TransitionGroup>
+        </Container>
+        {/* <Footer /> */}
       </QueryClientProvider>
     </StyledApp>
   );

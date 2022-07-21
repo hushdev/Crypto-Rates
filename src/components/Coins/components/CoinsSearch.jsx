@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Input from "../../UI/Input";
 
-const CoinsSearch = ({onChange}) => {
+const CoinsSearch = ({ onChange }) => {
   const [inputValue, setInputValue] = useState("");
 
   const changeHandler = (e) => {
     setInputValue(e.target.value);
-    onChange(inputValue);   
-  }
-  
+    onChange(inputValue);
+  };
+
   return (
     <StyledCoinsSearch>
       <Input

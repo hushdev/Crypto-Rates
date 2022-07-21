@@ -6,8 +6,7 @@ import Chip from "../../UI/Chip";
 import Title from "../../UI/Title";
 
 const Overview = ({ coin }) => {
-  const priceChangeClass =
-    coin.market_data.price_change_percentage_24h > 0 ? "green" : "red";
+  const priceChangeClass = coin.market_data.price_change_percentage_24h > 0 ? "green" : "red";
 
   return (
     <StyledOverview>
@@ -32,9 +31,7 @@ const Overview = ({ coin }) => {
           {/* Quick information */}
           <div className="additional-info">
             <span className="heading">Market Cap</span>
-            <Chip className="value">
-              ${convertNumber(coin.market_data.market_cap.usd)}
-            </Chip>
+            <Chip className="value">${convertNumber(coin.market_data.market_cap.usd)}</Chip>
           </div>
           <div className="additional-info">
             <span className="heading">Market Cap Rank</span>
@@ -42,64 +39,42 @@ const Overview = ({ coin }) => {
           </div>
           <div className="additional-info">
             <span className="heading">All-time hight</span>
-            <Chip className="value">
-              ${convertNumber(coin.market_data.ath.usd)}
-            </Chip>
+            <Chip className="value">${convertNumber(coin.market_data.ath.usd)}</Chip>
           </div>
           <div className="additional-info">
             <span className="heading">All-time low</span>
-            <Chip className="value">
-              ${convertNumber(coin.market_data.atl.usd)}
-            </Chip>
+            <Chip className="value">${convertNumber(coin.market_data.atl.usd)}</Chip>
           </div>
           <div className="additional-info">
             <span className="heading">Total Volume</span>
-            <Chip className="value">
-              ${convertNumber(coin.market_data.total_volume.usd)}
-            </Chip>
+            <Chip className="value">${convertNumber(coin.market_data.total_volume.usd)}</Chip>
           </div>
           {/* Chip links to homepage, git and reddit */}
           <div className="chips-wrap">
             {coin.links.homepage[0] && (
               <Chip className="chip">
-                <a
-                  href={coin.links.homepage[0]}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href={coin.links.homepage[0]} target="_blank" rel="noreferrer">
                   Website
                 </a>
               </Chip>
             )}
             {coin.links.repos_url.github.length > 0 && (
               <Chip className="chip">
-                <a
-                  href={coin.links.repos_url.github[0]}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href={coin.links.repos_url.github[0]} target="_blank" rel="noreferrer">
                   GitHub
                 </a>
               </Chip>
             )}
             {coin.links.repos_url.bitbucket.length > 0 && (
               <Chip className="chip">
-                <a
-                  href={coin.links.repos_url.bitbucket[0]}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href={coin.links.repos_url.bitbucket[0]} target="_blank" rel="noreferrer">
                   BitBucket
                 </a>
               </Chip>
             )}
             {coin.links.subreddit_url && (
               <Chip className="chip">
-                <a
-                  href={coin.links.subreddit_url}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href={coin.links.subreddit_url} target="_blank" rel="noreferrer">
                   Reddit
                 </a>
               </Chip>

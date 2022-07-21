@@ -8,7 +8,7 @@ const GoBackBtn = () => {
 
   return (
     <StyledGoBackBtn onClick={() => navigate(-1)}>
-      <img src={ArrowSVG} alt="" /> Go Back
+      <img src={ArrowSVG} alt="Go back" /> Go Back
     </StyledGoBackBtn>
   );
 };

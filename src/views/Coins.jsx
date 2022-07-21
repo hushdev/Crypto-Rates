@@ -6,7 +6,6 @@ import Loader from "../components/UI/Loader";
 import CoinsList from "../components/Coins";
 import ErrorMessage from "../components/UI/ErrorMessage";
 
-
 const Rates = ({ baseUrl, ...props }) => {
   const { status, data, error } = useQuery("rates", () => getRates(1));
   return (

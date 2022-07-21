@@ -13,12 +13,11 @@ const Loader = () => {
 };
 
 const StyledLoader = styled.div`
-  
-    display: inline-block;
-    position: relative;
-    width: 50px;
-    height: 50px;
-  
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+
   & div {
     box-sizing: border-box;
     display: block;

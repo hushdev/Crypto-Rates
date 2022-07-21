@@ -14,10 +14,7 @@ const ThemeToggler = (props) => {
       setTheme("light");
       document.documentElement.style.setProperty("--gray", "#f3f4f6");
       document.documentElement.style.setProperty("--gray-light", "#dfdfdf");
-      document.documentElement.style.setProperty(
-        "--gray-transparent",
-        "#f3f4f685"
-      );
+      document.documentElement.style.setProperty("--gray-transparent", "#f3f4f685");
       document.documentElement.style.setProperty("--gray-decor", "#e6e6e6");
       document.documentElement.style.setProperty("--dark", "#ffffff");
       document.documentElement.style.setProperty("--text-white", "#000000");
@@ -26,27 +23,20 @@ const ThemeToggler = (props) => {
       setTheme("dark");
       document.documentElement.style.setProperty("--gray", "#1e1e1e");
       document.documentElement.style.setProperty("--gray-light", "#393939");
-      document.documentElement.style.setProperty(
-        "--gray-transparent",
-        "#1e1e1e92"
-      );
+      document.documentElement.style.setProperty("--gray-transparent", "#1e1e1e92");
       document.documentElement.style.setProperty("--gray-decor", "#272828");
       document.documentElement.style.setProperty("--dark", "#121212");
       document.documentElement.style.setProperty("--text-white", "#e2e2e2");
       document.documentElement.style.setProperty("--text-gray", "#a5a59c");
     }
     setTimeout(() => {
-      elems.forEach((elem) => (elem.style.transition = "0s"));      
+      elems.forEach((elem) => (elem.style.transition = "0s"));
       clearTimeout();
     }, 200);
   };
 
   return (
-    <StyledThemeToggler
-      onClick={toggleTheme}
-      theme={theme}
-      className={props.className}
-    >
+    <StyledThemeToggler onClick={toggleTheme} theme={theme} className={props.className}>
       <div className="round">
         <img src={theme === "dark" ? Moon : Sun} alt="" />
       </div>
@@ -58,8 +48,7 @@ const StyledThemeToggler = styled.div`
   width: 40px;
   height: 20px;
   border-radius: 20px;
-  background-color: ${(props) =>
-    props.theme === "dark" ? "#ffffff" : "#444444"};
+  background-color: ${(props) => (props.theme === "dark" ? "#ffffff" : "#444444")};
   border: 1px solid var(--gray-decor);
   padding: 3px;
   margin-right: 10px;
@@ -71,9 +60,7 @@ const StyledThemeToggler = styled.div`
     height: 20px;
     border-radius: 50%;
     transition: all 0.2s linear;
-    transform: translateX(
-      ${(props) => (props.theme === "light" ? "20px" : "0")}
-    );
+    transform: translateX(${(props) => (props.theme === "light" ? "20px" : "0")});
   }
 `;
 

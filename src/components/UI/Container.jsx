@@ -2,9 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = ({ children, ...props }) => {
-  return (
-    <ContainerStyled className={props.className}>{children}</ContainerStyled>
-  );
+  return <ContainerStyled className={props.className}>{children}</ContainerStyled>;
 };
 
 const ContainerStyled = styled.div`
