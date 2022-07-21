@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CoinsList from "./components/CoinsList";
 import CoinsSearch from "./components/CoinsSearch";
 
-export default ({ list }) => {
+const Coins = ({ list }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
@@ -12,3 +12,5 @@ export default ({ list }) => {
     </>
   );
 };
+
+export default  Coins;

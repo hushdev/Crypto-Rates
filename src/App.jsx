@@ -6,12 +6,12 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Container from "./components/UI/Container";
 import Navbar from "./components/UI/Navbar";
 // import Footer from "./components/UI/Footer";
-import About from "./views/About";
-import Dashboard from "./views/Dashboard";
-import Graph from "./views/Graph";
-import Coins from "./views/Coins";
-import Blog from "./views/Blog";
-import BlogPost from "./views/BlogPost";
+import AboutView from "./views/AboutView";
+import DashboardView from "./views/DashboardView";
+import GraphView from "./views/GraphView";
+import CoinsView from "./views/CoinsView";
+import BlogView from "./views/BlogView";
+import BlogPostView from "./views/BlogPostView";
 import styled from "styled-components";
 
 const App = () => {
@@ -27,12 +27,12 @@ const App = () => {
           <TransitionGroup component={null}>
             <CSSTransition key={location.key} classNames="fade" timeout={300}>
               <Routes>
-                <Route path="/" element={<Coins baseUrl={baseUrl} />} exac />
-                <Route path="/graph/:id" element={<Graph />} />
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/blog" element={<Blog />} />
-                <Route path="/blog/:postID" element={<BlogPost />} />
+                <Route path="/" element={<CoinsView baseUrl={baseUrl} />} />
+                <Route path="/graph/:id" element={<GraphView />} />
+                <Route path="/dashboard" element={<DashboardView />} />
+                <Route path="/about" element={<AboutView />} />
+                <Route path="/blog" element={<BlogView />} />
+                <Route path="/blog/:postID" element={<BlogPostView />} />
               </Routes>
             </CSSTransition>
           </TransitionGroup>

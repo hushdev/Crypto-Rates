@@ -2,13 +2,13 @@ import React from "react";
 import Card from "../components/UI/Card";
 import Title from "../components/UI/Title";
 
-const BlogPost = () => {
+const DashboardView = () => {
   return (
     <div>
-      <Title size={2}>Blog post</Title>
+      <Title size={2}>Dashboard</Title>
       <Card></Card>
     </div>
   );
 };
 
-export default BlogPost;
+export default DashboardView;

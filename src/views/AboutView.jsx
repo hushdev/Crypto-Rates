@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import Title from "../components/UI/Title";
 
-const About = () => {
+const AboutView = () => {
   return (
-    <StyledAbout>
+    <StyledAboutView>
       <Title size={2}>About</Title>
       <p>This is an app to fetch crypto data, view graphs, discover dashboard and read the blog.</p>
       <p>
@@ -27,11 +27,11 @@ const About = () => {
           SVG Repo
         </a>
       </p>
-    </StyledAbout>
+    </StyledAboutView>
   );
 };
 
-const StyledAbout = styled.div`
+const StyledAboutView = styled.div`
   p {
     color: var(--text-white);
     font-size: 16px;
@@ -45,4 +45,4 @@ const StyledAbout = styled.div`
   }
 `;
 
-export default About;
+export default AboutView;

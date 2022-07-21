@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import Card from "../../UI/Card";
 import convertNumber from "../../../utils/convert-number";
 import ErrorMessage from "../../UI/ErrorMessage";
+import { ReactComponent as StarSVG } from "../../../assets/svg/star.svg";
 
 const CoinsList = ({ list, searchQuery, ...props }) => {
   const [filteredList, setFilteredList] = useState([...list]);
@@ -13,6 +14,11 @@ const CoinsList = ({ list, searchQuery, ...props }) => {
       list.filter((coin) => coin.name.toLowerCase().includes(searchQuery.toLowerCase().trim()))
     );
   }, [searchQuery, list]);
+
+  const saveCoinHandler = (coin) => {
+    //TODO - localstorage logic
+    console.log("Saved: " + coin);
+  };
 
   return (
     <>
@@ -26,6 +32,7 @@ const CoinsList = ({ list, searchQuery, ...props }) => {
               <span>Current Price</span>
               <span>ATH</span>
               <span>Mkt Cap</span>
+              <span className="save">Save</span>
             </li>
             {filteredList.map((item, i) => (
               <li key={i}>
@@ -41,6 +48,12 @@ const CoinsList = ({ list, searchQuery, ...props }) => {
                 <span>$ {convertNumber(item.current_price)}</span>
                 <span>$ {convertNumber(item.ath)}</span>
                 <span>$ {convertNumber(item.market_cap)}</span>
+                <span className="save">
+                  <StarSVG
+                    onClick={() => saveCoinHandler(item.name)}
+                    className="heart"
+                  />
+                </span>
               </li>
             ))}
           </StyledCoinsList>
@@ -52,7 +65,7 @@ const CoinsList = ({ list, searchQuery, ...props }) => {
 };
 
 const StyledCoinsList = styled.ul`
-  min-width: 700px;
+  min-width: 670px;
   & li.heading {
     span.image {
       max-width: 55px;
@@ -64,6 +77,9 @@ const StyledCoinsList = styled.ul`
       color: var(--blue);
       font-weight: 500;
       padding-bottom: 15px;
+    }
+    span.save {
+      width: 33px;
     }
   }
   & li {
@@ -77,6 +93,8 @@ const StyledCoinsList = styled.ul`
     }
     span.image {
       max-width: 55px;
+      display: flex;
+      align-items: center;
       img {
         width: 30px;
         height: auto;
@@ -86,6 +104,19 @@ const StyledCoinsList = styled.ul`
       color: var(--text-gray);
       font-size: 14px;
       font-weight: 400;
+    }
+    span.save {
+      width: 33px;
+      svg {
+        width: 33px;
+        height: 15px;
+        fill: var(--text-gray);
+        transition: 0.2s ease;
+        cursor: pointer;
+        &:hover {
+          fill: var(--blue);
+        }
+      }
     }
     span.symbol {
       text-transform: uppercase;
