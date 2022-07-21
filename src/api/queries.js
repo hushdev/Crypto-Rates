@@ -1,5 +1,5 @@
 const cryptoURL = "https://api.coingecko.com/api/v3";
-// const newsURL = "https://cryptopanic.com/api/v1";
+const newsURL = "https://min-api.cryptocompare.com/data/v2";
 
 const getRates = async (page) => {
     const response = await fetch(
@@ -12,9 +12,8 @@ const getRates = async (page) => {
     return response.json();
   },
   getNews = async (page) => {
-    // TODO - work on thi bug
-    const response = await fetch('');
+    const response = await fetch(`${newsURL}/news/?lang=EN`);
     return response.json();
-  }
+  };
 
 export { getRates, getCoinInfo, getNews };

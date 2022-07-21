@@ -32,7 +32,9 @@ const CoinsList = ({ list, searchQuery, ...props }) => {
             {filteredList.map((item, i) => (
               <li key={i}>
                 <span className="image">
-                  <img src={item.image} alt={item.name} />
+                  <NavLink to={`graph/${item.id}`}>
+                    <img src={item.image} alt={item.name} />
+                  </NavLink>
                 </span>
                 <span className="name">
                   <NavLink to={`graph/${item.id}`}>{item.name}</NavLink>

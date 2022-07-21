@@ -74,7 +74,7 @@ const Overview = ({ coin }) => {
             {coin.links.repos_url.github.length > 0 && (
               <Chip className="chip">
                 <a
-                  href={coin.links.repos_url.github}
+                  href={coin.links.repos_url.github[0]}
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -85,7 +85,7 @@ const Overview = ({ coin }) => {
             {coin.links.repos_url.bitbucket.length > 0 && (
               <Chip className="chip">
                 <a
-                  href={coin.links.repos_url.bitbucket}
+                  href={coin.links.repos_url.bitbucket[0]}
                   target="_blank"
                   rel="noreferrer"
                 >
