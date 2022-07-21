@@ -3,18 +3,18 @@ import styled from "styled-components";
 import Card from "../../UI/Card";
 
 const Post = ({ post }) => {
-  console.log(post);
   return (
     <StyledPost>
-      <Card>
-
-      </Card>
-    </StyledPost>    
-  )
-}
-
+      <Card className="post">{post.title}</Card>
+    </StyledPost>
+  );
+};
 
 const StyledPost = styled.div`
+  //TODO - Work on styling
+  .post {
+    width: 100%;
+  }
 `;
 
 export default Post;

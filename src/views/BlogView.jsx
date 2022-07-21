@@ -11,7 +11,7 @@ const BlogView = () => {
   return (
     <div>
       {status === 'loading' && <Loader/>}
-      {error && <ErrorMessage>{error.message}</ErrorMessage>}/
+      {error && <ErrorMessage>{error.message}</ErrorMessage>}
       {data && <Blog posts={data.Data} />}
     </div>
   );
