@@ -50,6 +50,7 @@ const StyledNavbar = styled.div`
   position: sticky;
   top: 0;
   left: 0;
+  box-shadow: var(--shadow);
   @media (max-width: 555px) {
     padding: 10px 0;
   }

@@ -19,6 +19,7 @@ const App = () => {
   const queryClient = new QueryClient();
   const baseUrl = process.env.REACT_APP_API;
 
+  
   return (
     <StyledApp>
       <QueryClientProvider client={queryClient}>

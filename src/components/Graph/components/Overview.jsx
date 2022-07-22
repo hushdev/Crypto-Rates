@@ -177,10 +177,13 @@ const StyledOverview = styled.div`
         overflow-x: hidden;
         border-radius: 0;
         margin-bottom: 20px;
+        box-shadow: unset;
       }
       p {
         max-width: 100%;
         width: 100%;
+        max-height: 200px;
+        height: min-content !important;
       }
       .additional-info {
         min-width: 100%;

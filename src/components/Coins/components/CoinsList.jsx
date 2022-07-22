@@ -23,8 +23,8 @@ const CoinsList = ({ list, searchQuery, ...props }) => {
   return (
     <>
       {filteredList.length > 0 && (
-        <Card>
-          <StyledCoinsList>
+        <Card transparent>
+          <StyledCoinsList >
             <li className="heading">
               <span className="image">Coin</span>
               <span></span>
@@ -35,7 +35,7 @@ const CoinsList = ({ list, searchQuery, ...props }) => {
               <span className="save">Save</span>
             </li>
             {filteredList.map((item, i) => (
-              <li key={i}>
+              <li className="body" key={i}>
                 <span className="image">
                   <NavLink to={`graph/${item.id}`}>
                     <img src={item.image} alt={item.name} />
@@ -67,6 +67,9 @@ const CoinsList = ({ list, searchQuery, ...props }) => {
 const StyledCoinsList = styled.ul`
   min-width: 670px;
   & li.heading {
+    &:hover {
+      background-color: unset;
+    }
     span.image {
       max-width: 55px;
     }
@@ -90,6 +93,9 @@ const StyledCoinsList = styled.ul`
     border-bottom: 1px solid var(--gray-decor);
     &:last-child {
       border-bottom: 0;
+    }
+    &:hover {
+      background-color: var(--gray);
     }
     span.image {
       max-width: 55px;
