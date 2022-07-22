@@ -24,7 +24,7 @@ const CoinsList = ({ list, searchQuery, ...props }) => {
     <>
       {filteredList.length > 0 && (
         <Card transparent>
-          <StyledCoinsList >
+          <StyledCoinsList>
             <li className="heading">
               <span className="image">Coin</span>
               <span></span>
@@ -49,10 +49,7 @@ const CoinsList = ({ list, searchQuery, ...props }) => {
                 <span>$ {convertNumber(item.ath)}</span>
                 <span>$ {convertNumber(item.market_cap)}</span>
                 <span className="save">
-                  <StarSVG
-                    onClick={() => saveCoinHandler(item.name)}
-                    className="heart"
-                  />
+                  <StarSVG onClick={() => saveCoinHandler(item.name)} className="heart" />
                 </span>
               </li>
             ))}
@@ -91,6 +88,7 @@ const StyledCoinsList = styled.ul`
     align-items: center;
     padding: 7px;
     border-bottom: 1px solid var(--gray-decor);
+    height: calc(43px - 7px); 
     &:last-child {
       border-bottom: 0;
     }

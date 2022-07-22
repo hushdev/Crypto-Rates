@@ -8,7 +8,7 @@ const Blog = ({ posts }) => {
   return (
     <>
       <Title size={2}>Blog</Title>
-      <Row flexWrap="wrap" justifyContent="flex-start" alignItems="stretch">
+      <Row flexWrap="wrap" justifyContent="flex-start" alignItems="stretch" margin="-10px 0 0 0">
         {posts.map((post, i) => (
           <Post key={i} post={post} />
         ))}

@@ -6,7 +6,7 @@ const Container = ({ children, ...props }) => {
 };
 
 const ContainerStyled = styled.div`
-  max-width: 1280px;
+  max-width: 1320px;
   width: calc(100% - 20px);
   margin: 0 auto;
   padding: 0 10px;

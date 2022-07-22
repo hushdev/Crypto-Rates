@@ -1,26 +1,36 @@
 import React from "react";
 import styled from "styled-components";
+import convertUTC from "../../../utils/convert-utc";
 import Card from "../../UI/Card";
 import Chip from "../../UI/Chip";
 import Title from "../../UI/Title";
 
 const Post = ({ post }) => {
-  const categories = post.categories.split('|');
+  const categories = post.categories.split("|").slice(0, 3);
+  const date = convertUTC(post.published_on);
 
   return (
     <StyledPost>
       <Card className="post">
         <div className="info">
-          {categories.map(category => <Chip className="info-chip">{category}</Chip>)}
+          {categories.map((category, i) => (
+            <Chip key={i} className="info-chip">
+              {category}
+            </Chip>
+          ))}
         </div>
         <Title size={5} className="title">
           <img src={post.imageurl} alt={post.title} />
           {post.title.substr(0, 70)}
         </Title>
         <p dangerouslySetInnerHTML={{ __html: post.body }}></p>
-        <a href={post.guid} target="_blank">
-          Read more
-        </a>
+        <div className="footer">
+          <div className="date">{date}</div>
+
+          <a href={post.guid} target="_blank">
+            Read more
+          </a>
+        </div>
       </Card>
     </StyledPost>
   );
@@ -68,6 +78,10 @@ const StyledPost = styled.div`
     transition: 0.2s;
     display: flex;
     flex-direction: column;
+    &:hover {
+      transform: scale(1.015);
+      filter: brightness(98%);
+    }
     .info {
       display: flex;
       align-items: center;
@@ -75,7 +89,9 @@ const StyledPost = styled.div`
       &-chip {
         margin-right: 5px;
         font-size: 12px;
-        &:last-child {margin-right: 0;}
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
     .title {
@@ -102,23 +118,25 @@ const StyledPost = styled.div`
       overflow: hidden;
     }
 
-    a {
-      color: var(--blue);
-      font-size: 14px;
-      text-decoration: none;
-      margin-left: auto;
+    .footer {
+      display: flex;
+      justify-content: space-between;
       margin-top: auto;
-      &:hover {
-        text-decoration: underline;
-      }
-      &:visited {
+      .date {
+        font-size: 10px;
         color: var(--text-gray);
       }
-    }
-
-    &:hover {
-      transform: scale(0.98);
-      filter: brightness(90%);
+      a {
+        color: var(--blue);
+        font-size: 14px;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+        &:visited {
+          color: var(--text-gray);
+        }
+      }
     }
   }
 `;

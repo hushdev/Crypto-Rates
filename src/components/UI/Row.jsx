@@ -9,6 +9,7 @@ const Row = ({ children, ...props }) => {
       justifyContent={props.justifyContent}
       alignItems={props.alignItems}
       padding={props.padding}
+      margin={props.margin}
     >
       {children}
     </StyledRow>
@@ -21,6 +22,7 @@ const StyledRow = styled.div`
   justify-content: ${(props) => props.justifyContent};
   align-items: ${(props) => props.alignItems};
   padding: ${(props) => props.padding};
+  margin: ${(props) => props.margin};
 `;
 
 export default Row;
