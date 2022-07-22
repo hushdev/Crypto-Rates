@@ -11,7 +11,6 @@ import DashboardView from "./views/DashboardView";
 import GraphView from "./views/GraphView";
 import CoinsView from "./views/CoinsView";
 import BlogView from "./views/BlogView";
-import BlogPostView from "./views/BlogPostView";
 import styled from "styled-components";
 
 const App = () => {
@@ -33,7 +32,6 @@ const App = () => {
                 <Route path="/dashboard" element={<DashboardView />} />
                 <Route path="/about" element={<AboutView />} />
                 <Route path="/blog" element={<BlogView />} />
-                <Route path="/blog/:postID" element={<BlogPostView />} />
               </Routes>
             </CSSTransition>
           </TransitionGroup>

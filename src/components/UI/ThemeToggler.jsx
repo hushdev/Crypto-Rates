@@ -7,9 +7,6 @@ const ThemeToggler = (props) => {
   const [theme, setTheme] = useState("dark");
 
   const toggleTheme = () => {
-    var elems = document.querySelectorAll("*");
-    elems.forEach((elem) => (elem.style.transition = ".2s ease"));
-
     if (theme === "dark") {
       setTheme("light");
       document.documentElement.style.setProperty("--gray", "#f3f4f6");
@@ -29,10 +26,6 @@ const ThemeToggler = (props) => {
       document.documentElement.style.setProperty("--text-white", "#e2e2e2");
       document.documentElement.style.setProperty("--text-gray", "#a5a59c");
     }
-    setTimeout(() => {
-      elems.forEach((elem) => (elem.style.transition = "0s"));
-      clearTimeout();
-    }, 200);
   };
 
   return (

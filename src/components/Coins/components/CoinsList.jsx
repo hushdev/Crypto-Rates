@@ -89,7 +89,7 @@ const StyledCoinsList = styled.ul`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 7px;
     border-bottom: 1px solid var(--gray-decor);
     &:last-child {
       border-bottom: 0;
@@ -102,7 +102,7 @@ const StyledCoinsList = styled.ul`
       display: flex;
       align-items: center;
       img {
-        width: 30px;
+        width: 25px;
         height: auto;
       }
     }

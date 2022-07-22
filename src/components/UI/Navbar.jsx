@@ -21,8 +21,8 @@ const Navbar = () => {
           <ul>
             <NavLink to="/">Coins</NavLink>
             <NavLink to="/dashboard">Dashboard</NavLink>
-            <NavLink to="/about">About</NavLink>
             <NavLink to="/blog">Blog</NavLink>
+            <NavLink to="/about">About</NavLink>
             <ThemeToggler className="nav-theme-toggler" />
             <Button className="github-btn">
               <a
@@ -44,13 +44,14 @@ const Navbar = () => {
 const StyledNavbar = styled.div`
   background-color: var(--gray-transparent);
   backdrop-filter: blur(5px);
-  padding: 10px 15px;
+  padding: 8px 15px;
   border-bottom: 1px solid var(--gray-decor);
   margin-bottom: 25px;
   position: sticky;
   top: 0;
   left: 0;
   box-shadow: var(--shadow);
+  z-index: 100;
   @media (max-width: 555px) {
     padding: 10px 0;
   }
@@ -92,6 +93,7 @@ const StyledNavbar = styled.div`
     font-weight: 400;
   }
   & ul .github-btn {
+    padding: 5px 10px !important;
     @media (max-width: 450px) {
       display: none;
     }
