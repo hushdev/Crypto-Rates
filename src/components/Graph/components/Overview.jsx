@@ -7,6 +7,12 @@ import Title from "../../UI/Title";
 
 const Overview = ({ coin }) => {
   const priceChangeClass = coin.market_data.price_change_percentage_24h > 0 ? "green" : "red";
+  const currentPrice = `$${convertNumber(coin.market_data.current_price.usd)}`;
+  const priceChange = `$${convertNumber(coin.market_data.price_change_24h)} (24H)`;
+  const marketCap = `$${convertNumber(coin.market_data.market_cap.usd)}`;
+  const ath = `$${convertNumber(coin.market_data.ath.usd)}`;
+  const atl = `$${convertNumber(coin.market_data.atl.usd)}`;
+  const totalVolume = `$${convertNumber(coin.market_data.total_volume.usd)}`;
 
   return (
     <StyledOverview>
@@ -15,10 +21,8 @@ const Overview = ({ coin }) => {
         {coin.name}
       </Title>
       <Title size={4}>
-        ${convertNumber(coin.market_data.current_price.usd)}
-        <span className={priceChangeClass}>
-          &nbsp;${convertNumber(coin.market_data.price_change_24h)} (24h)
-        </span>
+        {currentPrice}
+        <span className={priceChangeClass}>&nbsp;{priceChange}</span>
       </Title>
       <div className="info">
         {coin.description.en && (
@@ -31,7 +35,7 @@ const Overview = ({ coin }) => {
           {/* Quick information */}
           <div className="additional-info">
             <span className="heading">Market Cap</span>
-            <Chip className="value">${convertNumber(coin.market_data.market_cap.usd)}</Chip>
+            <Chip className="value">{marketCap}</Chip>
           </div>
           <div className="additional-info">
             <span className="heading">Market Cap Rank</span>
@@ -39,16 +43,17 @@ const Overview = ({ coin }) => {
           </div>
           <div className="additional-info">
             <span className="heading">All-time hight</span>
-            <Chip className="value">${convertNumber(coin.market_data.ath.usd)}</Chip>
+            <Chip className="value">{ath}</Chip>
           </div>
           <div className="additional-info">
             <span className="heading">All-time low</span>
-            <Chip className="value">${convertNumber(coin.market_data.atl.usd)}</Chip>
+            <Chip className="value">{atl}</Chip>
           </div>
           <div className="additional-info">
             <span className="heading">Total Volume</span>
-            <Chip className="value">${convertNumber(coin.market_data.total_volume.usd)}</Chip>
+            <Chip className="value">{totalVolume}</Chip>
           </div>
+          
           {/* Chip links to homepage, git and reddit */}
           <div className="chips-wrap">
             {coin.links.homepage[0] && (

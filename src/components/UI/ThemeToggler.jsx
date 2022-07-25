@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Sun from "../../assets/svg/sun.svg";
-import Moon from "../../assets/svg/moon.svg";
+import { ReactComponent as MoonSVG } from "../../assets/svg/moon.svg";
+import { ReactComponent as SunSVG } from "../../assets/svg/sun.svg";
+
 
 const ThemeToggler = (props) => {
   const [theme, setTheme] = useState("dark");
@@ -31,7 +32,7 @@ const ThemeToggler = (props) => {
   return (
     <StyledThemeToggler onClick={toggleTheme} theme={theme} className={props.className}>
       <div className="round">
-        <img src={theme === "dark" ? Moon : Sun} alt="" />
+        {theme === 'dark' ? <MoonSVG /> : <SunSVG />}
       </div>
     </StyledThemeToggler>
   );

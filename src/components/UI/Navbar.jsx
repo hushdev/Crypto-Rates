@@ -1,13 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-
 import ThemeToggler from "./ThemeToggler";
 import Container from "./Container";
 import { NavLink } from "react-router-dom";
 import Row from "./Row";
 import Button from "./Button";
-
-import Logo from "../../assets/svg/logo.svg";
+import { ReactComponent as LogoSVG } from "../../assets/svg/logo.svg";
 
 const Navbar = () => {
   return (
@@ -15,7 +13,7 @@ const Navbar = () => {
       <Container>
         <Row justifyContent="space-between" alignItems="center">
           <NavLink to="/" className="logo">
-            <img src={Logo} alt="Crypto Rates Logo" />
+            <LogoSVG />
             <span>CryptoRates</span>
           </NavLink>
           <ul>
@@ -61,8 +59,8 @@ const StyledNavbar = styled.div`
     display: flex;
     align-items: center;
     text-decoration: none;
-    img {
-      width: 30px;
+    svg {
+      width: 25px;
       height: auto;
       margin-right: 5px;
     }

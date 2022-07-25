@@ -9,7 +9,7 @@ const AboutView = () => {
       <p>This is an app to fetch crypto data, view graphs, discover dashboard and read the blog.</p>
       <p>
         Frontend tech stack: React, react-query, react-router-dom, styled-components, sass (scss),
-        react-transition-group
+        react-transition-group.
       </p>
       <p>
         API's:&nbsp;
@@ -19,13 +19,13 @@ const AboutView = () => {
         &nbsp;
         <a href="https://www.coingecko.com" target="_blank" rel="noreferrer">
           Coin Gecko
-        </a>
+        </a>.
       </p>
       <p>
         Icons are coming from{" "}
         <a href="https://www.svgrepo.com" target="_blank" rel="noreferrer">
           SVG Repo
-        </a>
+        </a>.
       </p>
     </StyledAboutView>
   );

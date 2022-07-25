@@ -88,7 +88,7 @@ const StyledCoinsList = styled.ul`
     align-items: center;
     padding: 7px;
     border-bottom: 1px solid var(--gray-decor);
-    height: calc(43px - 7px); 
+    height: calc(43px - 7px);
     &:last-child {
       border-bottom: 0;
     }

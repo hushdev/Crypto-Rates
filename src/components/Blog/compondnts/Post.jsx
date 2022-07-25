@@ -8,6 +8,7 @@ import Title from "../../UI/Title";
 const Post = ({ post }) => {
   const categories = post.categories.split("|").slice(0, 3);
   const date = convertUTC(post.published_on);
+  const title = post.title.substr(0, 70);
 
   return (
     <StyledPost>
@@ -21,13 +22,12 @@ const Post = ({ post }) => {
         </div>
         <Title size={5} className="title">
           <img src={post.imageurl} alt={post.title} />
-          {post.title.substr(0, 70)}
+          {title}
         </Title>
         <p dangerouslySetInnerHTML={{ __html: post.body }}></p>
         <div className="footer">
           <div className="date">{date}</div>
-
-          <a href={post.guid} target="_blank">
+          <a href={post.guid} target="_blank" rel="noreferrer">
             Read more
           </a>
         </div>
