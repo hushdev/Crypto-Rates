@@ -16,7 +16,7 @@ const GoBackBtn = () => {
 
 const StyledGoBackBtn = styled.span`
   width: 100px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   cursor: pointer;

@@ -79,7 +79,7 @@ const StyledPost = styled.div`
     display: flex;
     flex-direction: column;
     &:hover {
-      transform: scale(1.015);
+      transform: scale(0.99);
       filter: brightness(98%);
     }
     .info {
@@ -114,7 +114,7 @@ const StyledPost = styled.div`
       color: var(--text-gray);
       margin-bottom: 20px;
       font-size: 14px;
-      height: 50px;
+      height: 53px;
       overflow: hidden;
     }
 
