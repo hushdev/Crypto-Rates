@@ -6,29 +6,29 @@ import Chip from "../../UI/Chip";
 import Title from "../../UI/Title";
 
 const Post = ({ post }) => {
-  const categories = post.categories.split("|").slice(0, 3);
-  const date = convertUTC(post.published_on);
-  const title = post.title.substr(0, 70);
+  const categories = post?.categories?.split("|").slice(0, 3);
+  const date = convertUTC(post?.published_on);
+  const title = post?.title?.substr(0, 70);
 
   return (
     <StyledPost>
-      <Card className="post">
+      <Card className={`${post.lastPost && 'post-last'} post`}>
         <div className="info">
-          {categories.map((category, i) => (
+          {categories?.map((category, i) => (
             <Chip key={i} className="info-chip">
               {category}
             </Chip>
           ))}
         </div>
         <Title size={5} className="title">
-          <img src={post.imageurl} alt={post.title} />
+          {post?.imageurl && <img src={post?.imageurl} alt={post?.title} />}
           {title}
         </Title>
-        <p dangerouslySetInnerHTML={{ __html: post.body }}></p>
+        <p dangerouslySetInnerHTML={{ __html: post?.body }}></p>
         <div className="footer">
-          <div className="date">{date}</div>
-          <a href={post.guid} target="_blank" rel="noreferrer">
-            Read more
+          <div className="date">{post?.guid && date}</div>
+          <a href={post?.guid} target="_blank" rel="noreferrer">
+            {post?.guid && 'Read More'}
           </a>
         </div>
       </Card>
@@ -75,12 +75,22 @@ const StyledPost = styled.div`
     height: 100%;
     height: max-content;
     overflow: hidden;
-    transition: 0.2s;
+    transition: 0.2s ease-in-out;
     display: flex;
     flex-direction: column;
+    &-last {
+      align-items: center;
+      justify-content: center;
+      h5 {
+        font-size: 20px;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+    }
     &:hover {
-      transform: scale(0.99);
-      filter: brightness(98%);
+      filter: brightness(105%);
     }
     .info {
       display: flex;
@@ -114,7 +124,7 @@ const StyledPost = styled.div`
       color: var(--text-gray);
       margin-bottom: 20px;
       font-size: 14px;
-      height: 53px;
+      height: 52px;
       overflow: hidden;
     }
 

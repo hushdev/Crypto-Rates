@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
@@ -11,13 +12,11 @@ import DashboardView from "./views/DashboardView";
 import GraphView from "./views/GraphView";
 import CoinsView from "./views/CoinsView";
 import BlogView from "./views/BlogView";
-import styled from "styled-components";
 
 const App = () => {
   const location = useLocation();
   const queryClient = new QueryClient();
   const baseUrl = process.env.REACT_APP_API;
-
   
   return (
     <StyledApp>
@@ -35,8 +34,8 @@ const App = () => {
               </Routes>
             </CSSTransition>
           </TransitionGroup>
+          {/* <Footer /> */}
         </Container>
-        {/* <Footer /> */}
       </QueryClientProvider>
     </StyledApp>
   );

@@ -1,16 +1,24 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import Button from "../../UI/Button";
 import Card from "../../UI/Card";
 import ErrorMessage from "../../UI/ErrorMessage";
 import CoinListItem from "./CoinListItem";
 
 const CoinsList = ({ list, searchQuery, ...props }) => {
   const [filteredList, setFilteredList] = useState([...list]);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
-    setFilteredList(
-      list.filter((coin) => coin.name.toLowerCase().includes(searchQuery.toLowerCase().trim()))
-    );
+    if (searchQuery.length <= 1) {
+      setFilteredList([...list]);
+    } else {
+      setFilteredList(
+        list.filter((coin) =>
+          coin.name.toLowerCase().trim().includes(searchQuery.toLowerCase().trim())
+        )
+      );
+    }
   }, [searchQuery, list]);
 
   return (
@@ -41,7 +49,7 @@ const CoinsList = ({ list, searchQuery, ...props }) => {
 
 const StyledCoinsList = styled.ul`
   min-width: 670px;
-  
+
   & li.heading {
     display: flex;
     justify-content: space-between;
