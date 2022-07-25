@@ -62,8 +62,9 @@ const StyledPost = styled.div`
     }
   }
 
-  @media (max-width: 430px) {
+  @media (max-width: 480px) {
     width: 100%;
+    margin: 10px 0 10px 0;
     &:nth-child(4n),
     &:nth-child(6n) {
       width: 100%;

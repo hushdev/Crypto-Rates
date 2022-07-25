@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Button from "../../UI/Button";
+// import Button from "../../UI/Button";
 import Card from "../../UI/Card";
 import ErrorMessage from "../../UI/ErrorMessage";
 import CoinListItem from "./CoinListItem";
 
 const CoinsList = ({ list, searchQuery, ...props }) => {
   const [filteredList, setFilteredList] = useState([...list]);
-  const [page, setPage] = useState(1);
+  // const [page, setPage] = useState(1);
 
   useEffect(() => {
     if (searchQuery.length <= 1) {
