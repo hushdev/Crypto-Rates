@@ -5,7 +5,7 @@ import Title from "../components/UI/Title";
 const AboutView = () => {
   return (
     <StyledAboutView>
-      <Title size={2}>About</Title>
+      <Title size={2}>📔 About</Title>
       <p>This is an app to fetch crypto data, view graphs, discover dashboard and read the blog.</p>
       <p>
         Frontend tech stack: React, react-query, react-router-dom, styled-components, sass (scss),
