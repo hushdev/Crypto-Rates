@@ -29,24 +29,19 @@ code {
 
 
 // SCROLLBAR CUSTOM STYLES
-
-/* width */
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: var(--gray-decor);
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #555555;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: var(--blue);
 }

@@ -1,19 +1,30 @@
-const cryptoURL = "https://api.coingecko.com/api/v3";
-const newsURL = "https://min-api.cryptocompare.com/data/v2";
+const cryptoUrl = "https://api.coingecko.com/api/v3";
+const newsUrl = "https://min-api.cryptocompare.com/data/v2";
 
+// Getting all coins
 const getRates = async (page) => {
-    const response = await fetch(
-      `${cryptoURL}/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=${page}&sparkline=false`
-    );
-    return response.json();
-  },
-  getCoinInfo = async (coin) => {
-    const response = await fetch(`${cryptoURL}/coins/${coin}`);
-    return response.json();
-  },
-  getNews = async (page) => {
-    const response = await fetch(`${newsURL}/news/?lang=EN`);
-    return response.json();
-  };
+  const response = await fetch(
+    `${cryptoUrl}/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=${page}&sparkline=false`
+  );
+  return response.json();
+};
 
-export { getRates, getCoinInfo, getNews };
+//Getting exact coin info
+const getCoinInfo = async (coin) => {
+  const response = await fetch(`${cryptoUrl}/coins/${coin}`);
+  return response.json();
+};
+
+//Getting exact coin graph
+const getCoinGraph = async (coin, days) => {
+  const response = await fetch(`${cryptoUrl}/coins/${coin}/market_chart?vs_currency=usd&days=10`);
+  return response.json();
+};
+
+//Getting news t
+const getNews = async (page) => {
+  const response = await fetch(`${newsUrl}/news/?lang=EN`);
+  return response.json();
+};
+
+export { getRates, getCoinInfo, getCoinGraph, getNews };

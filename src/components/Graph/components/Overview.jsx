@@ -14,6 +14,8 @@ const Overview = ({ coin }) => {
   const atl = `$${convertNumber(coin.market_data.atl.usd)}`;
   const totalVolume = `$${convertNumber(coin.market_data.total_volume.usd)}`;
 
+  console.log(coin)
+
   return (
     <StyledOverview>
       <Title size={2}>

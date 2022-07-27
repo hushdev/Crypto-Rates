@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 // import Button from "../../UI/Button";
 import Card from "../../UI/Card";
@@ -8,6 +8,7 @@ import CoinListItem from "./CoinListItem";
 const CoinsList = ({ list, searchQuery, ...props }) => {
   const [filteredList, setFilteredList] = useState([...list]);
   // const [page, setPage] = useState(1);
+  const cardRef = useRef();
 
   useEffect(() => {
     if (searchQuery.length <= 1) {
@@ -21,10 +22,14 @@ const CoinsList = ({ list, searchQuery, ...props }) => {
     }
   }, [searchQuery, list]);
 
+  const scrollHandler = () => {
+    console.log(cardRef.current.scrollTop);
+  }
+
   return (
     <>
       {filteredList.length > 0 && (
-        <Card>
+        <Card height="calc(100vh - 270px)" innerRef={cardRef} onScroll={scrollHandler}>
           <StyledCoinsList>
             <li className="heading">
               <span className="image">Coin</span>
@@ -49,7 +54,6 @@ const CoinsList = ({ list, searchQuery, ...props }) => {
 
 const StyledCoinsList = styled.ul`
   min-width: 670px;
-
   & li.heading {
     display: flex;
     justify-content: space-between;
@@ -57,10 +61,6 @@ const StyledCoinsList = styled.ul`
     padding: 7px;
     border-bottom: 1px solid var(--gray-decor);
     height: calc(43px - 7px);
-
-    &:hover {
-      background-color: unset;
-    }
     span.image {
       max-width: 55px;
     }
