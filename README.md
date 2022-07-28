@@ -3,7 +3,7 @@
 Pet project to fetch crypto data, view graphs, dashboard and read the blog. 
 
 # Tech stack
-React, react-query, react-router-dom, styled-components, sass (scss), react-transition-group.
+React, react-query, react-router-dom, styled-components, sass (scss), react-transition-group, chart.js, react-chartjs-2.
 
 # API's
 1) https://api.coingecko.com

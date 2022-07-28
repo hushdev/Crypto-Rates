@@ -9,7 +9,7 @@ const AboutView = () => {
       <p>This is an app to fetch crypto data, view graphs, discover dashboard and read the blog.</p>
       <p>
         Frontend tech stack: React, react-query, react-router-dom, styled-components, sass (scss),
-        react-transition-group.
+        react-transition-group, chart.js, react-chartjs-2.
       </p>
       <p>
         API's:&nbsp;
