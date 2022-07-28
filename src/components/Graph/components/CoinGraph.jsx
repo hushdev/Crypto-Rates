@@ -15,26 +15,25 @@ import {
   Title,
   Tooltip,
   Filler,
-  Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
+import GraphSwitcher from "./GraphSwitcher";
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Filler,
-  Legend
-);
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Filler);
 
 const CoinGraph = ({ coin }) => {
-  const { status, data, error } = useQuery("graph", () => getCoinGraph(coin.id, 30, "daily"));
+  const { status, data, error, refetch } = useQuery("graph", () => getCoinGraph(coin.id, period, "daily"), {
+    keepPreviousData: true,
+  });
   const [category, setCategory] = useState("prices");
+  const [categoryTitle, setCategoryTitle] = useState("Prices");
+  const [period, setPeriod] = useState(7);
   const [XLabels, setXLabels] = useState([]);
   const [YLabels, setYLabels] = useState([]);
+
+  useEffect(() => {
+    refetch();
+  }, [period, refetch]);
 
   useEffect(() => {
     if (data) {
@@ -42,7 +41,7 @@ const CoinGraph = ({ coin }) => {
         return convertUTC(item[0]);
       });
       const YLabels = data[category].map((item) => {
-        return item[1]
+        return item[1];
       });
       setXLabels(XLabels);
       setYLabels(YLabels);
@@ -56,6 +55,14 @@ const CoinGraph = ({ coin }) => {
         position: "top",
       },
     },
+    scales: {
+      x: {
+        grid: { display: false },
+      },
+      y: {
+        grid: { color: "#a9a9a979" },
+      },
+    },
   };
 
   const chartData = {
@@ -63,12 +70,21 @@ const CoinGraph = ({ coin }) => {
     datasets: [
       {
         fill: true,
-        label: `${coin.name}'s price`,
+        label: `${coin.name} ${categoryTitle} in USD`,
         data: YLabels,
-        borderColor: "#007fff",
-        backgroundColor: "#0080ff4f",
+        borderColor: YLabels[0] < YLabels[YLabels.length - 1] ? "#13df32" : "#d10000",
+        backgroundColor: YLabels[0] < YLabels[YLabels.length - 1] ? "#13df3236" : "#d1000039",
       },
     ],
+  };
+
+  const categoryClickHandler = (category, categoryTitle) => {
+    setCategory(category);
+    setCategoryTitle(categoryTitle);
+  };
+
+  const periodClickHandler = (period) => {
+    setPeriod(period);
   };
 
   return (
@@ -77,7 +93,11 @@ const CoinGraph = ({ coin }) => {
       {error && <ErrorMessage>error.message</ErrorMessage>}
       {data && (
         <div>
-          <Line options={chartOptions} data={chartData} />
+          <div className="switchers">
+            <GraphSwitcher type="categories" onClick={categoryClickHandler} className="categories" />
+            <GraphSwitcher type="periods" onClick={periodClickHandler} />
+          </div>
+          <Line options={chartOptions} data={chartData} className="graph" />
         </div>
       )}
     </StyledCoinGraph>
@@ -87,6 +107,16 @@ const CoinGraph = ({ coin }) => {
 const StyledCoinGraph = styled.div`
   margin-top: 40px;
   max-width: 800px;
+  .switchers {
+    display: flex;
+    flex-wrap: wrap;
+    .categories {
+      margin-right: 20px;
+    }
+  }
+  .graph {
+    margin-top: 30px;
+  }
 `;
 
 export default CoinGraph;
