@@ -22,7 +22,7 @@ import GraphSwitcher from "./GraphSwitcher";
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Filler);
 
 const CoinGraph = ({ coin }) => {
-  const { status, data, error, refetch } = useQuery("graph", () => getCoinGraph(coin.id, period, "daily"), {
+  const { isLoading, isFetching, data, error, isRefetchError, refetch } = useQuery("graph", () => getCoinGraph(coin.id, period, "daily"), {
     keepPreviousData: true,
   });
   const [category, setCategory] = useState("prices");
@@ -89,14 +89,15 @@ const CoinGraph = ({ coin }) => {
 
   return (
     <StyledCoinGraph>
-      {status === "loading" && <Loader center />}
+      {isLoading && <Loader center />}
       {error && <ErrorMessage>error.message</ErrorMessage>}
       {data && (
         <div>
           <div className="switchers">
             <GraphSwitcher type="categories" onClick={categoryClickHandler} className="categories" />
-            <GraphSwitcher type="periods" onClick={periodClickHandler} />
+            <GraphSwitcher type="periods" onClick={periodClickHandler} disabled={isFetching}/>
           </div>
+          {isRefetchError}
           <Line options={chartOptions} data={chartData} className="graph" />
         </div>
       )}

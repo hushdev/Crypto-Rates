@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-const mock_data = {
+const BTNS_DATA = {
   categories: [
     { title: "Prices", value: "prices", selected: true },
     { title: "Market Capitalization", value: "market_caps", selected: false },
@@ -19,11 +19,11 @@ const mock_data = {
   ],
 };
 
-const GraphSwitcher = ({ onClick, type, className }) => {
+const GraphSwitcher = ({ onClick, type, className, disabled }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    setData(mock_data[type]);
+    setData(BTNS_DATA[type]);
   }, [type]);
 
   const clickHandler = (item) => {
@@ -47,6 +47,7 @@ const GraphSwitcher = ({ onClick, type, className }) => {
             key={item.value}
             onClick={() => clickHandler(item)}
             className={item.selected ? "active" : ""}
+            disabled={disabled}
           >
             {item.title}
           </button>
@@ -67,6 +68,9 @@ const StyledGraphSwitcher = styled.div`
     color: var(--text-white);
     margin-top: 5px;
     min-width: max-content;
+    &:disabled {
+      filter: brightness(80%);
+    }
     &:hover {
       background-color: var(--gray-decor);
     }
