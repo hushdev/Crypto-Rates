@@ -1,24 +1,11 @@
 const convertUTC = (utc) => {
-  const unixEpochTimeMS = utc * 1000;
-  const d = new Date(unixEpochTimeMS);
-
-  const monthNames = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-
-  const strDate = `${monthNames[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
-  return strDate;
+  let a = new Date(utc);
+  let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  let year = a.getFullYear();
+  let month = months[a.getMonth()];
+  let date = a.getDate();
+  let time = `${month} ${date}, ${year}`; 
+  return time;
 };
 
 export default convertUTC;

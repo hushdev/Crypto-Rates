@@ -1,13 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import convertUTC from "../../../utils/convert-utc";
 import Card from "../../UI/Card";
 import Chip from "../../UI/Chip";
 import Title from "../../UI/Title";
 
 const Post = ({ post }) => {
   const categories = post?.categories?.split("|").slice(0, 3);
-  const date = convertUTC(post?.published_on);
   const title = post?.title?.substr(0, 70);
 
   return (
@@ -26,7 +24,6 @@ const Post = ({ post }) => {
         </Title>
         <p dangerouslySetInnerHTML={{ __html: post?.body }}></p>
         <div className="footer">
-          <div className="date">{post?.guid && date}</div>
           <a href={post?.guid} target="_blank" rel="noreferrer">
             {post?.guid && 'Read More'}
           </a>
@@ -133,10 +130,6 @@ const StyledPost = styled.div`
       display: flex;
       justify-content: space-between;
       margin-top: auto;
-      .date {
-        font-size: 10px;
-        color: var(--text-gray);
-      }
       a {
         color: var(--blue);
         font-size: 14px;

@@ -16,8 +16,8 @@ const getCoinInfo = async (coin) => {
 };
 
 //Getting exact coin graph
-const getCoinGraph = async (coin, days) => {
-  const response = await fetch(`${cryptoUrl}/coins/${coin}/market_chart?vs_currency=usd&days=10`);
+const getCoinGraph = async (coin, days, interval) => {
+  const response = await fetch(`${cryptoUrl}/coins/${coin}/market_chart?vs_currency=usd&days=${days}&interval=${interval}`);
   return response.json();
 };
 
