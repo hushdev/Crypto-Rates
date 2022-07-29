@@ -63,7 +63,8 @@ const StyledPost = styled.div`
     width: 100%;
     margin: 10px 0 10px 0;
     &:nth-child(4n),
-    &:nth-child(6n) {
+    &:nth-child(6n),
+    &:nth-child(7n-4) {
       width: 100%;
     }
   }

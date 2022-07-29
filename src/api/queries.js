@@ -4,7 +4,7 @@ const newsUrl = "https://min-api.cryptocompare.com/data/v2";
 // Getting all coins
 const getRates = async (page) => {
   const response = await fetch(
-    `${cryptoUrl}/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=${page}&sparkline=false`
+    `${cryptoUrl}/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=${page}&sparkline=true`
   );
   return response.json();
 };

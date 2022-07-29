@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import convertNumber from "../../../utils/convert-number";
 import { ReactComponent as StarSVG } from "../../../assets/svg/star.svg";
+import CoinListItemGraph from "./CoinListItemGraph";
 
 const CoinListItem = ({ coin }) => {
   const saveCoinHandler = (coin) => {
@@ -14,7 +15,7 @@ const CoinListItem = ({ coin }) => {
     <StyledCoinListItem>
       <span className="image">
         <NavLink to={`graph/${coin.id}`}>
-          <img src={coin.image} alt={coin.name} />
+          <img src={coin.image} alt={coin.name} loading="lazy"/>
         </NavLink>
       </span>
       <span className="name">
@@ -22,8 +23,11 @@ const CoinListItem = ({ coin }) => {
       </span>
       <span className="symbol">{coin.symbol}</span>
       <span>$ {convertNumber(coin.current_price)}</span>
-      <span>$ {convertNumber(coin.ath)}</span>
-      <span>$ {convertNumber(coin.market_cap)}</span>
+      <span className="ath">$ {convertNumber(coin.ath)}</span>
+      <span className="market_cap">$ {convertNumber(coin.market_cap)}</span>
+      <span>
+        <CoinListItemGraph price={coin.sparkline_in_7d.price} />
+      </span>
       <span className="save">
         <StarSVG onClick={() => saveCoinHandler(coin.name)} className="heart" />
       </span>
@@ -37,8 +41,8 @@ const StyledCoinListItem = styled.li`
   align-items: center;
   padding: 7px;
   border-bottom: 1px solid var(--gray-decor);
-  height: calc(43px - 7px);
-  
+  height: calc(50px - 15px);
+
   &:last-child {
     border-bottom: 0;
   }
@@ -89,6 +93,18 @@ const StyledCoinListItem = styled.li`
     width: 100%;
     max-width: 104px;
     text-align: left;
+  }
+  @media (max-width: 721px) {
+    & .ath,
+    & .market_cap,
+    & .symbol {
+      display: none;
+    }
+  }
+  @media (max-width: 480px) {
+    & .image {
+      display: none !important;
+    }
   }
 `;
 

@@ -17,6 +17,10 @@ const StyledCard = styled.div`
   overflow-x: auto;
   box-shadow: var(--shadow);
   height: ${(props) => (props.height ? props.height : "auto")};
+
+  @media (max-width:480px) {
+    padding: 10px 10px;
+  }
 `;
 
 export default Card;

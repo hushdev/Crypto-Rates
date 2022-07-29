@@ -1,43 +1,35 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-// import Button from "../../UI/Button";
 import Card from "../../UI/Card";
 import ErrorMessage from "../../UI/ErrorMessage";
 import CoinListItem from "./CoinListItem";
 
 const CoinsList = ({ list, searchQuery, ...props }) => {
   const [filteredList, setFilteredList] = useState([...list]);
-  // const [page, setPage] = useState(1);
-  const cardRef = useRef();
 
   useEffect(() => {
     if (searchQuery.length <= 1) {
       setFilteredList([...list]);
     } else {
       setFilteredList(
-        list.filter((coin) =>
-          coin.name.toLowerCase().trim().includes(searchQuery.toLowerCase().trim())
-        )
+        list.filter((coin) => coin.name.toLowerCase().trim().includes(searchQuery.toLowerCase().trim()))
       );
     }
   }, [searchQuery, list]);
 
-  const scrollHandler = () => {
-    console.log(cardRef.current.scrollTop);
-  }
-
   return (
     <>
       {filteredList.length > 0 && (
-        <Card height="calc(100vh - 270px)" innerRef={cardRef} onScroll={scrollHandler}>
+        <Card>
           <StyledCoinsList>
             <li className="heading">
               <span className="image">Coin</span>
-              <span></span>
-              <span></span>
+              <span className="symbol">Name</span>
+              <span className="code">Symbol</span>
               <span>Price</span>
-              <span>ATH</span>
-              <span>Mkt Cap</span>
+              <span className="ath">ATH</span>
+              <span className="market_cap">Mkt Cap</span>
+              <span>7 Days</span>
               <span className="save">Save</span>
             </li>
 
@@ -53,7 +45,7 @@ const CoinsList = ({ list, searchQuery, ...props }) => {
 };
 
 const StyledCoinsList = styled.ul`
-  min-width: 670px;
+  min-width: 380px;
   & li.heading {
     display: flex;
     justify-content: space-between;
@@ -74,6 +66,22 @@ const StyledCoinsList = styled.ul`
     }
     span.save {
       width: 33px;
+    }
+    @media (max-width: 721px) {
+      span.ath,
+      span.market_cap,
+      span.symbol
+       {
+        display: none;
+      }
+    }
+    @media (max-width:480px) {
+      span {
+        width: unset;
+      }
+      span.code {
+        display: none;
+      }
     }
   }
 `;

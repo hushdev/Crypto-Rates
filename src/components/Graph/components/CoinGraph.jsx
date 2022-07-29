@@ -72,7 +72,7 @@ const CoinGraph = ({ coin }) => {
         fill: true,
         label: `${coin.name} ${categoryTitle} in USD`,
         data: YLabels,
-        borderColor: YLabels[0] < YLabels[YLabels.length - 1] ? "#13df32" : "#d10000",
+        borderColor: YLabels[0] < YLabels[YLabels.length - 1] ? "#15bd2e" : "#ba1515",
         backgroundColor: YLabels[0] < YLabels[YLabels.length - 1] ? "#13df3236" : "#d1000039",
       },
     ],
