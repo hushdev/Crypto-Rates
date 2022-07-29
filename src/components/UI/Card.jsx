@@ -10,13 +10,13 @@ const Card = ({ children, ...props }) => {
 };
 
 const StyledCard = styled.div`
-  border: 1px solid var(--gray-decor);
+  border: 1px solid ${props => props.transparent ? 'transparent' : 'var(--gray-decor)'};
   border-radius: 10px;
   background-color: ${(props) => (props.transparent ? "transparent" : "var(--gray)")};
-  padding: 15px;
+  padding: ${props => props.transparent ? '0' : '10px'};
   overflow-y: hidden;
   overflow-x: auto;
-  box-shadow: var(--shadow);
+  box-shadow: ${props => props.transparent ? "unset" : "var(--shadow)"};  
   height: ${(props) => (props.height ? props.height : "auto")};
 
   @media (max-width:480px) {

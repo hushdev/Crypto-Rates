@@ -20,7 +20,7 @@ const CoinsList = ({ list, searchQuery, ...props }) => {
   return (
     <>
       {filteredList.length > 0 && (
-        <Card>
+        <Card transparent>
           <StyledCoinsList>
             <li className="heading">
               <span className="image">Coin</span>
@@ -49,9 +49,9 @@ const StyledCoinsList = styled.ul`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 7px;
+    /* padding: 7px; */
     border-bottom: 1px solid var(--gray-decor);
-    height: calc(43px - 7px);
+    /* height: calc(43px - 7px); */
     span.image {
       max-width: 55px;
     }

@@ -73,9 +73,9 @@ const StyledCoinListItem = styled.li`
     }
   }
   & span {
-    color: var(--text-white);
+    color: var(--text-gray);
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 400;
     margin: 0 5px;
     &:first-child {
       margin: 0 5px 0 0;

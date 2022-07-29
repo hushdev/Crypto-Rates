@@ -44,7 +44,7 @@ const StyledNavbar = styled.div`
   backdrop-filter: blur(5px);
   padding: 8px 15px;
   border-bottom: 1px solid var(--gray-decor);
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   position: sticky;
   top: 0;
   left: 0;
