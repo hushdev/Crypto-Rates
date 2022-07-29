@@ -9,7 +9,7 @@ const Coins = ({ list }) => {
   return (
     <>
       <Title size={2}>💰 Coins</Title>
-      <CoinsSearch onChange={setSearchQuery} />
+      {/* <CoinsSearch onChange={setSearchQuery} /> */}
       <CoinsList list={list} searchQuery={searchQuery} />
     </>
   );

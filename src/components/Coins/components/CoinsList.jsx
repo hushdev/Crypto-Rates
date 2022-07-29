@@ -30,7 +30,6 @@ const CoinsList = ({ list, searchQuery, ...props }) => {
               <span className="ath">ATH</span>
               <span className="market_cap">Mkt Cap</span>
               <span>7 Days</span>
-              <span className="save">Save</span>
             </li>
 
             {filteredList.map((coin, i) => (
@@ -61,7 +60,6 @@ const StyledCoinsList = styled.ul`
       max-width: 104px;
       text-align: left;
       color: var(--blue);
-      font-weight: 500;
       padding-bottom: 15px;
     }
     span.save {

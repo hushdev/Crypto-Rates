@@ -14,6 +14,7 @@ const StyledCard = styled.div`
   border-radius: 10px;
   background-color: ${(props) => (props.transparent ? "transparent" : "var(--gray)")};
   padding: 15px;
+  overflow-y: hidden;
   overflow-x: auto;
   box-shadow: var(--shadow);
   height: ${(props) => (props.height ? props.height : "auto")};

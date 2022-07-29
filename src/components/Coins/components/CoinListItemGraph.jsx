@@ -37,13 +37,25 @@ const CoinListItemGraph = ({ price }) => {
 
   return (
     <StyledLine>
+      {/* This overlay is a hack to get rid of :hover tooltip in React-chartjs-2 */}
+      <div className="overlay"></div> 
       <Line options={chartOptions} data={chartData} className="graph" />
     </StyledLine>
   );
 };
 
 const StyledLine = styled.div`
+  position: relative;
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
   .graph {
+    z-index: 1;
     height: 500px;
   }
 `;

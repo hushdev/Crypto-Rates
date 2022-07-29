@@ -14,8 +14,9 @@ const CoinListItem = ({ coin }) => {
   return (
     <StyledCoinListItem>
       <span className="image">
+        <StarSVG onClick={() => saveCoinHandler(coin.name)} className="heart" />
         <NavLink to={`graph/${coin.id}`}>
-          <img src={coin.image} alt={coin.name} loading="lazy"/>
+          <img src={coin.image} alt={coin.name} loading="lazy" />
         </NavLink>
       </span>
       <span className="name">
@@ -27,9 +28,6 @@ const CoinListItem = ({ coin }) => {
       <span className="market_cap">$ {convertNumber(coin.market_cap)}</span>
       <span>
         <CoinListItemGraph price={coin.sparkline_in_7d.price} />
-      </span>
-      <span className="save">
-        <StarSVG onClick={() => saveCoinHandler(coin.name)} className="heart" />
       </span>
     </StyledCoinListItem>
   );
@@ -54,27 +52,36 @@ const StyledCoinListItem = styled.li`
     max-width: 55px;
     display: flex;
     align-items: center;
-    img {
-      width: 25px;
-      height: auto;
-    }
-  }
-  & span {
-    color: var(--text-gray);
-    font-size: 14px;
-    font-weight: 400;
-  }
-  & span.save {
-    width: 33px;
     svg {
-      width: 33px;
-      height: 15px;
+      width: 13px;
+      height: 13px;
       fill: var(--text-gray);
       transition: 0.2s ease;
       cursor: pointer;
       &:hover {
         fill: var(--blue);
       }
+    }
+    a {
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+      img {
+        width: 25px;
+        height: auto;
+      }
+    }
+  }
+  & span {
+    color: var(--text-white);
+    font-size: 14px;
+    font-weight: 300;
+    margin: 0 5px;
+    &:first-child {
+      margin: 0 5px 0 0;
+    }
+    &:first-child {
+      margin: 0 0 0 5px;
     }
   }
   & span.symbol {
@@ -84,6 +91,7 @@ const StyledCoinListItem = styled.li`
     a {
       color: var(--text-white);
       text-decoration: none;
+      font-weight: 500;
       &:hover {
         text-decoration: underline;
       }
@@ -101,11 +109,7 @@ const StyledCoinListItem = styled.li`
       display: none;
     }
   }
-  @media (max-width: 480px) {
-    & .image {
-      display: none !important;
-    }
-  }
+ 
 `;
 
 export default CoinListItem;

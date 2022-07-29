@@ -53,7 +53,7 @@ const Overview = ({ coin }) => {
             <span className="heading">Total Volume</span>
             <Chip className="value">{totalVolume}</Chip>
           </div>
-          
+
           {/* Chip links to homepage, git and reddit */}
           <div className="chips-wrap">
             {coin.links.homepage[0] && (
@@ -122,6 +122,8 @@ const StyledOverview = styled.div`
 
   & p {
     color: var(--text-gray);
+    font-weight: 300;
+    line-height: 20px;
     a {
       color: var(--blue);
     }
@@ -166,6 +168,7 @@ const StyledOverview = styled.div`
         margin-bottom: 10px;
         .heading {
           color: var(--text-gray);
+          font-weight: 300;
         }
         .value {
           color: var(--text-white);

@@ -10,7 +10,7 @@ const Post = ({ post }) => {
 
   return (
     <StyledPost>
-      <Card className={`${post.lastPost && 'post-last'} post`}>
+      <Card className={`${post.lastPost && "post-last"} post`}>
         <div className="info">
           {categories?.map((category, i) => (
             <Chip key={i} className="info-chip">
@@ -25,7 +25,7 @@ const Post = ({ post }) => {
         <p dangerouslySetInnerHTML={{ __html: post?.body }}></p>
         <div className="footer">
           <a href={post?.guid} target="_blank" rel="noreferrer">
-            {post?.guid && 'Read More'}
+            {post?.guid && "Read More"}
           </a>
         </div>
       </Card>
@@ -77,6 +77,12 @@ const StyledPost = styled.div`
     transition: 0.2s ease-in-out;
     display: flex;
     flex-direction: column;
+    h5 {
+      font-weight: 400;
+    }
+    p {
+      font-weight: 300;
+    }
     &-last {
       align-items: center;
       justify-content: center;
