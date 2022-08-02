@@ -25,7 +25,7 @@ const CoinsList = ({ list, searchQuery, ...props }) => {
             <li className="heading">
               <span className="image">Coin</span>
               <span className="symbol">Name</span>
-              <span className="code">Symbol</span>
+              <span className="code"></span>
               <span>Price</span>
               <span className="ath">ATH</span>
               <span className="market_cap">Mkt Cap</span>
@@ -49,15 +49,13 @@ const StyledCoinsList = styled.ul`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* padding: 7px; */
+    padding: 0 7px;
     border-bottom: 1px solid var(--gray-decor);
-    /* height: calc(43px - 7px); */
     span.image {
       max-width: 55px;
     }
     span {
-      width: 100%;
-      max-width: 104px;
+      width: 104px;
       text-align: left;
       color: var(--blue);
       padding-bottom: 15px;
@@ -70,14 +68,6 @@ const StyledCoinsList = styled.ul`
       span.market_cap,
       span.symbol
        {
-        display: none;
-      }
-    }
-    @media (max-width:480px) {
-      span {
-        width: unset;
-      }
-      span.code {
         display: none;
       }
     }

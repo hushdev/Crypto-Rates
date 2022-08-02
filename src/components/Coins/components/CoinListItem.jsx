@@ -27,7 +27,9 @@ const CoinListItem = ({ coin }) => {
       <span className="ath">$ {convertNumber(coin.ath)}</span>
       <span className="market_cap">$ {convertNumber(coin.market_cap)}</span>
       <span>
-        <CoinListItemGraph price={coin.sparkline_in_7d.price} />
+        <NavLink to={`graph/${coin.id}`}>
+          <CoinListItemGraph price={coin.sparkline_in_7d.price} />
+        </NavLink>
       </span>
     </StyledCoinListItem>
   );
@@ -109,7 +111,6 @@ const StyledCoinListItem = styled.li`
       display: none;
     }
   }
- 
 `;
 
 export default CoinListItem;

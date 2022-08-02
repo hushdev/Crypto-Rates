@@ -16,23 +16,31 @@ import {
   Tooltip,
   Filler,
 } from "chart.js";
+
 import { Line } from "react-chartjs-2";
 import GraphSwitcher from "./GraphSwitcher";
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Filler);
 
 const CoinGraph = ({ coin }) => {
-  const { isLoading, isFetching, data, error, isRefetchError, refetch } = useQuery("graph", () => getCoinGraph(coin.id, period, "daily"), {
-    keepPreviousData: true,
-  });
+  const { isLoading, isFetching, data, error, isRefetchError, refetch } = useQuery(
+    "graph",
+    () => getCoinGraph(coin.id, period, "daily"),
+    {
+      keepPreviousData: true,
+    }
+  );
   const [category, setCategory] = useState("prices");
   const [categoryTitle, setCategoryTitle] = useState("Prices");
   const [period, setPeriod] = useState(7);
+  const [pointScale, setPointScale] = useState(2);
   const [XLabels, setXLabels] = useState([]);
   const [YLabels, setYLabels] = useState([]);
 
   useEffect(() => {
     refetch();
+    period >= 365 ? setPointScale(1) : setPointScale(3);
+    period === "max" ? setPointScale(0) : setPointScale(3);
   }, [period, refetch]);
 
   useEffect(() => {
@@ -63,6 +71,14 @@ const CoinGraph = ({ coin }) => {
         grid: { color: "#a9a9a979" },
       },
     },
+    elements: {
+      line: {
+        tension: 0.3,
+      },
+      point: {
+        radius: pointScale,
+      },
+    },
   };
 
   const chartData = {
@@ -72,6 +88,7 @@ const CoinGraph = ({ coin }) => {
         fill: true,
         label: `${coin.name} ${categoryTitle} in USD`,
         data: YLabels,
+        borderWidth: 1,
         borderColor: YLabels[0] < YLabels[YLabels.length - 1] ? "#15bd2e" : "#ba1515",
         backgroundColor: YLabels[0] < YLabels[YLabels.length - 1] ? "#13df3236" : "#d1000039",
       },
@@ -95,7 +112,7 @@ const CoinGraph = ({ coin }) => {
         <div>
           <div className="switchers">
             <GraphSwitcher type="categories" onClick={categoryClickHandler} className="categories" />
-            <GraphSwitcher type="periods" onClick={periodClickHandler} disabled={isFetching}/>
+            <GraphSwitcher type="periods" onClick={periodClickHandler} disabled={isFetching} />
           </div>
           {isRefetchError}
           <Line options={chartOptions} data={chartData} className="graph" />
@@ -107,7 +124,7 @@ const CoinGraph = ({ coin }) => {
 
 const StyledCoinGraph = styled.div`
   margin-top: 40px;
-  max-width: 800px;
+  /* max-width: 800px; */
   .switchers {
     display: flex;
     flex-wrap: wrap;
