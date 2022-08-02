@@ -10,6 +10,7 @@ const Row = ({ children, ...props }) => {
       alignItems={props.alignItems}
       padding={props.padding}
       margin={props.margin}
+      overflowX={props.overflowX}
     >
       {children}
     </StyledRow>
@@ -23,6 +24,7 @@ const StyledRow = styled.div`
   align-items: ${(props) => props.alignItems};
   padding: ${(props) => props.padding};
   margin: ${(props) => props.margin};
+  overflow-x: ${(props) => props.overflowX};
 `;
 
 export default Row;

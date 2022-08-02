@@ -10,7 +10,7 @@ const StyledChip = styled.div`
   background-color: var(--gray-decor);
   color: var(--text-white);
   width: min-content;
-  border-radius: 10px;
+  border-radius: 7px;
   &:hover {
     background-color: var(--gray);
   }

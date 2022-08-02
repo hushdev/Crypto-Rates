@@ -1,14 +1,10 @@
 import React from "react";
-import Card from "../components/UI/Card";
-import Title from "../components/UI/Title";
+import Dashboard from "../components/Dashboard/Dashboard";
 
 const DashboardView = () => {
   return (
-    <div>
-      <Title size={2}>🔧 Dashboard</Title>
-      <Card></Card>
-    </div>
-  );
+    <Dashboard/>
+  )
 };
 
 export default DashboardView;
