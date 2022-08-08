@@ -1,20 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import convertNumber from "../../../utils/convert-number";
-import { ReactComponent as StarSVG } from "../../../assets/svg/star.svg";
 import CoinListItemGraph from "./CoinListItemGraph";
+import SaveBtn from "../../UI/SaveBtn";
 
 const CoinListItem = ({ coin }) => {
-  const saveCoinHandler = (coin) => {
-    //TODO - localstorage logic
-    console.log("Saved: " + coin);
+  useEffect(() => {
+    JSON.parse(localStorage.getItem("savedCoins"))?.forEach((item) => {
+      item === coin.id ? setIsSaved(true) : setIsSaved(false);
+    });
+  }, [coin]);
+
+  const [isSaved, setIsSaved] = useState(false);
+
+  const saveCoinHandler = () => {
+    let saveCoinsArr = localStorage.getItem("savedCoins")
+      ? JSON.parse(localStorage.getItem("savedCoins"))
+      : [];
+
+    if (isSaved) {
+      saveCoinsArr = saveCoinsArr.filter((item) => item !== coin.id);
+      localStorage.setItem("savedCoins", JSON.stringify(saveCoinsArr));
+      setIsSaved(false);
+      return;
+    }
+
+    saveCoinsArr.push(coin.id);
+    localStorage.setItem("savedCoins", JSON.stringify(saveCoinsArr));
+    setIsSaved(true);
   };
 
   return (
     <StyledCoinListItem>
       <span className="image">
-        <StarSVG onClick={() => saveCoinHandler(coin.name)} className="heart" />
+        <SaveBtn onClick={saveCoinHandler} active={isSaved} />
         <NavLink to={`graph/${coin.id}`}>
           <img src={coin.image} alt={coin.name} loading="lazy" />
         </NavLink>
@@ -54,16 +74,6 @@ const StyledCoinListItem = styled.li`
     max-width: 55px;
     display: flex;
     align-items: center;
-    svg {
-      width: 13px;
-      height: 13px;
-      fill: var(--text-gray);
-      transition: 0.2s ease;
-      cursor: pointer;
-      &:hover {
-        fill: var(--blue);
-      }
-    }
     a {
       display: flex;
       align-items: center;
