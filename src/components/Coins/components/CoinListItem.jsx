@@ -7,10 +7,11 @@ import SaveBtn from "../../UI/SaveBtn";
 
 const CoinListItem = ({ coin }) => {
   useEffect(() => {
-    JSON.parse(localStorage.getItem("savedCoins"))?.forEach((item) => {
-      item === coin.id ? setIsSaved(true) : setIsSaved(false);
+    const savedCoins = JSON.parse(localStorage.getItem("savedCoins"));
+    savedCoins?.length > 0 && savedCoins.forEach(item => {
+      if (item === coin.id) setIsSaved(true);
     });
-  }, [coin]);
+  }, []);
 
   const [isSaved, setIsSaved] = useState(false);
 

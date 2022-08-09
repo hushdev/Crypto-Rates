@@ -16,7 +16,7 @@ const CoinCardInfo = ({ coin, onRemove }) => {
   const removeCoin = (e) => {
     e.preventDefault();
     onRemove(coin.id);
-  }
+  };
 
   return (
     <StyledCoinCardInfo>
@@ -30,7 +30,9 @@ const CoinCardInfo = ({ coin, onRemove }) => {
             </span>
             <span className="current-price">${price}</span>
           </Title>
-          <Button onClick={removeCoin} className="remove">Remove</Button>
+          <Button onClick={removeCoin} className="remove">
+            Remove
+          </Button>
         </Card>
       </NavLink>
     </StyledCoinCardInfo>
@@ -80,9 +82,9 @@ const StyledCoinCardInfo = styled.div`
         font-weight: 400;
       }
       .remove {
-       padding: 5px 10px;
-       width: min-content;
-       align-self: flex-end;
+        padding: 5px 10px;
+        width: min-content;
+        align-self: flex-end;
       }
     }
   }

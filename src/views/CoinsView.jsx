@@ -7,7 +7,7 @@ import ErrorMessage from "../components/UI/ErrorMessage";
 
 const CoinsView = ({ baseUrl, ...props }) => {
   const { status, data, error } = useQuery("rates", () => getRates(1));
-console.log(data);
+  
   return (
     <div>
       {data && <Coins list={data} />}

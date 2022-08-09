@@ -15,7 +15,7 @@ const CoinListItemGraph = ({ price }) => {
     },
     elements: {
       line: {
-        tension: 0.2,
+        tension: 0.3,
       },
       point: {
         radius: 0,
@@ -24,7 +24,7 @@ const CoinListItemGraph = ({ price }) => {
   };
 
   const chartData = {
-    labels: Array(price.length).fill(""),
+    labels: Array(50).fill(""),
     datasets: [
       {
         fill: false,
@@ -33,12 +33,15 @@ const CoinListItemGraph = ({ price }) => {
         borderColor: price[0] <= price[price.length - 1] ? "#15bd2e" : "#ba1515",
       },
     ],
+    options: {
+      animation: false,
+    },
   };
 
   return (
     <StyledLine>
       {/* This overlay is a hack to get rid of :hover tooltip in React-chartjs-2 */}
-      <div className="overlay"></div> 
+      <div className="overlay"></div>
       <Line options={chartOptions} data={chartData} className="graph" />
     </StyledLine>
   );

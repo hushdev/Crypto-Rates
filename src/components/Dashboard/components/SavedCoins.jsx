@@ -27,7 +27,6 @@ const SavedCoins = () => {
   const removeCoinHandler = (coinId) => {
     const newSavedCoins = savedCoins.filter((item) => item !== coinId);
     const newCoinsList = coinsList.filter((item) => item.id !== coinId);
-    console.log(newCoinsList);
     localStorage.setItem("savedCoins", JSON.stringify(newSavedCoins));
     setSavedCoins(newSavedCoins);
     setCoinsList(newCoinsList);
@@ -40,13 +39,11 @@ const SavedCoins = () => {
       <Title size={2} className="info-title">
         Saved coins <span>7 days information</span>
       </Title>
+      {!coinsList && <ErrorMessage>No coins saved</ErrorMessage>}
       {data && (
         <Row flexWrap="no-wrap" overflowX="auto" padding="0 0 20px 0">
-          {coinsList ? (
-            coinsList?.map((coin, i) => <CoinCardInfo key={i} coin={coin} onRemove={removeCoinHandler} />)
-          ) : (
-            <ErrorMessage>No coins saved</ErrorMessage>
-          )}
+          {coinsList &&
+            coinsList?.map((coin, i) => <CoinCardInfo key={i} coin={coin} onRemove={removeCoinHandler} />)}
         </Row>
       )}
     </StyledSavedCoins>
