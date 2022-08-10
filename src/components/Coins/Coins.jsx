@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Title from "../UI/Title";
 import CoinsList from "./components/CoinsList";
-import CoinsSearch from "./components/CoinsSearch";
+// import CoinsSearch from "./components/CoinsSearch";
 
 const Coins = ({ list }) => {
   const [searchQuery, setSearchQuery] = useState("");

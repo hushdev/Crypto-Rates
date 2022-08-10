@@ -55,14 +55,27 @@ const CoinCardInfo = ({ coin, onRemove }) => {
 const StyledCoinCardInfo = styled.div`
   width: calc(33.3% - 20px);
   margin: 10px;
+  &:nth-child(1),
+  &:nth-child(2),
+  &:nth-child(3) {
+    margin: 0 10px 10px 10px;
+  }
   @media (max-width: 768px) {
+    &:nth-child(3) {
+      margin: 10px;
+    }
     width: calc(50% - 20px);
   }
   @media (max-width: 450px) {
     width: calc(100%);
-    margin: 10px 0;
+    &:nth-child(n) {
+      margin: 10px 0;
+    }
     &:first-child {
       margin: 0 0 10px 0;
+    }
+    &:last-child {
+      margin: 0;
     }
   }
   .navlink {
