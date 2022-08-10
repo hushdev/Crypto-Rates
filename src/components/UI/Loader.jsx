@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-const Loader = ({center}) => {
+const Loader = ({center, className}) => {
   return (
-    <StyledLoader center="center">
+    <StyledLoader center="center" className={className}>
       <div></div>
       <div></div>
       <div></div>
@@ -17,7 +17,7 @@ const StyledLoader = styled.div`
   position: relative;
   width: 50px;
   height: 50px;
-  position: ${props => props.center ? "absolute" : "unset"};
+  position: ${props => props.center ? "absolute" : "relative"};
   left: ${props => props.center ? "50%" : "unset"};
   transform: ${props => props.center ? "translateX(-50%)" : "unset"};
   

@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Line } from "react-chartjs-2";
 
 const CoinCardGraph = ({ price }) => {
-  console.log(price);
   const chartOptions = {
     responsive: true,
     scales: {
