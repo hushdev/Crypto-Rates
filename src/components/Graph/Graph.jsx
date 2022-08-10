@@ -4,10 +4,10 @@ import CoinGraph from "./components/CoinGraph";
 
 const Graph = ({ coin }) => {
   return (
-    <>
+    <div>
       <Overview coin={coin} />
       <CoinGraph coin={coin}/>
-    </>
+    </div>
   );
 };
 

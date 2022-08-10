@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { Line } from "react-chartjs-2";
 
-const CoinListItemGraph = ({ price }) => {
+const CoinCardGraph = ({ price }) => {
+  console.log(price);
   const chartOptions = {
     responsive: true,
     scales: {
@@ -34,21 +35,20 @@ const CoinListItemGraph = ({ price }) => {
       },
     ],
     options: {
-      animation: false,
-      showLine: false,
+      animation: true,
     },
   };
-
   return (
-    <StyledLine>
+    <StyledCoinCardGraph>
       <div className="overlay"></div>
       <Line options={chartOptions} data={chartData} className="graph" />
-    </StyledLine>
+    </StyledCoinCardGraph>
   );
 };
 
-const StyledLine = styled.div`
+const StyledCoinCardGraph = styled.div`
   position: relative;
+  width: 150px;
   .overlay {
     position: absolute;
     top: 0;
@@ -63,4 +63,4 @@ const StyledLine = styled.div`
   }
 `;
 
-export default CoinListItemGraph;
+export default CoinCardGraph;

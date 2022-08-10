@@ -11,13 +11,13 @@ const Blog = ({ posts }) => {
   };
 
   return (
-    <>
+    <div>
       <Title size={2}>📝 Daily feed</Title>
       <Row flexWrap="wrap" justifyContent="flex-start" alignItems="stretch" margin="-10px 0 0 0">
         {posts?.length && posts.map((post, i) => <Post key={i} post={post} />)}
         <Post post={lastPost} />
       </Row>
-    </>
+    </div>
   );
 };
 export default Blog;

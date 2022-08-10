@@ -19,7 +19,7 @@ const StyledSaveBtn = styled.div`
     cursor: pointer;
     animation: ${(props) => (props.active ? "bounce 0.3s forwards" : "")};
     &:hover {
-      fill: var(--blue);
+      fill: var(--blue-hover);
     }
   }
   @keyframes bounce {

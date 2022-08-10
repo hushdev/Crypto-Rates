@@ -1,11 +1,13 @@
 import React from "react";
-import SavedCoins from './components/SavedCoins';
+import MarketCapTopList from "./components/MarketCapTopList/MarketCapTopList";
+import SavedCoins from "./components/SavedCoins/SavedCoins";
 
 const Dashboard = () => {
   return (
-    <>
-      <SavedCoins/>
-    </>
+    <div>
+      <SavedCoins />
+      <MarketCapTopList />
+    </div>
   );
 };
 

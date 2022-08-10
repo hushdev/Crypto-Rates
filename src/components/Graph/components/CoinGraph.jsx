@@ -88,9 +88,9 @@ const CoinGraph = ({ coin }) => {
         fill: true,
         label: `${coin.name} ${categoryTitle} in USD`,
         data: YLabels,
-        borderWidth: 1,
-        borderColor: YLabels[0] < YLabels[YLabels.length - 1] ? "#15bd2e" : "#ba1515",
-        backgroundColor: YLabels[0] < YLabels[YLabels.length - 1] ? "#13df3236" : "#d1000039",
+        borderWidth: 2,
+        borderColor: YLabels[0] < YLabels[YLabels.length - 1] ? "#1f9531" : "#8f1818",
+        backgroundColor: YLabels[0] < YLabels[YLabels.length - 1] ? "#1f953130" : "#8f18182c",
       },
     ],
   };
@@ -107,7 +107,7 @@ const CoinGraph = ({ coin }) => {
   return (
     <StyledCoinGraph>
       {isLoading && <Loader center />}
-      {error && <ErrorMessage>error.message</ErrorMessage>}
+      {error && <ErrorMessage>{error.message}</ErrorMessage>}
       {data && (
         <div>
           <div className="switchers">
@@ -124,7 +124,6 @@ const CoinGraph = ({ coin }) => {
 
 const StyledCoinGraph = styled.div`
   margin-top: 40px;
-  /* max-width: 800px; */
   .switchers {
     display: flex;
     flex-wrap: wrap;

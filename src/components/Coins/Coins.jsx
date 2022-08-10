@@ -7,11 +7,11 @@ const Coins = ({ list }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
-    <>
+    <div>
       <Title size={2}>💰 Coins list</Title>
       {/* <CoinsSearch onChange={setSearchQuery} /> */}
       <CoinsList list={list} searchQuery={searchQuery} />
-    </>
+    </div>
   );
 };
 

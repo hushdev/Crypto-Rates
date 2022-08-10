@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Title from "../../UI/Title";
-import Loader from "../../UI/Loader";
-import Row from "../../UI/Row";
-import ErrorMessage from "../../UI/ErrorMessage";
+import Title from "../../../UI/Title";
+import Loader from "../../../UI/Loader";
+import Row from "../../../UI/Row";
+import ErrorMessage from "../../../UI/ErrorMessage";
 import { useQuery } from "react-query";
-import { getExactCoins } from "../../../api/queries";
+import { getExactCoins } from "../../../../api/queries";
 import CoinCardInfo from "./CoinCardInfo";
 
 const SavedCoins = () => {
@@ -13,7 +13,7 @@ const SavedCoins = () => {
   const [coinsList, setCoinsList] = useState([]);
 
   const { data, isLoading, error } = useQuery("exactCoins", () => getExactCoins(savedCoins), {
-    enabled: savedCoins.length >= 1,
+    enabled: savedCoins?.length >= 1,
   });
 
   useEffect(() => {
@@ -37,11 +37,10 @@ const SavedCoins = () => {
       {isLoading && <Loader center />}
       {error && <ErrorMessage>{error.message}</ErrorMessage>}
       <Title size={2} className="info-title">
-        Saved coins <span>7 days information</span>
+        Saved coins <span>{coinsList ? "7 days" : "No saved coins"}</span>
       </Title>
-      {!coinsList && <ErrorMessage>No coins saved</ErrorMessage>}
       {data && (
-        <Row flexWrap="no-wrap" overflowX="auto" padding="0 0 20px 0">
+        <Row flexWrap="wrap" justifyContent="flex-start">
           {coinsList &&
             coinsList?.map((coin, i) => <CoinCardInfo key={i} coin={coin} onRemove={removeCoinHandler} />)}
         </Row>

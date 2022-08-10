@@ -133,7 +133,6 @@ const StyledOverview = styled.div`
     align-items: flex-start;
 
     .card {
-      width: 60%;
       margin-right: 20px;
       p {
         height: 208px;

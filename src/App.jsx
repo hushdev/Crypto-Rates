@@ -17,14 +17,18 @@ const App = () => {
   const location = useLocation();
   const queryClient = new QueryClient();
   const baseUrl = process.env.REACT_APP_API;
-  
+
   return (
     <StyledApp>
       <QueryClientProvider client={queryClient}>
         <Navbar />
         <Container>
-          <TransitionGroup component={null}>
-            <CSSTransition key={location.key} classNames="fade" timeout={300}>
+          <TransitionGroup component={'div'}>
+            <CSSTransition
+              key={location.key}
+              classNames="fade"
+              timeout={300}
+            >
               <Routes>
                 <Route path="/" element={<CoinsView baseUrl={baseUrl} />} />
                 <Route path="/graph/:id" element={<GraphView />} />
