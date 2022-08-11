@@ -8,7 +8,8 @@ import Title from "../../UI/Title";
 const Overview = ({ coin }) => {
   const priceChangeClass = coin.market_data.price_change_percentage_24h > 0 ? "green" : "red";
   const currentPrice = `$${convertNumber(coin.market_data.current_price.usd)}`;
-  const priceChange = `$${convertNumber(coin.market_data.price_change_24h)} (24H)`;
+  const priceChange = `${convertNumber(coin.market_data.price_change_percentage_7d.toFixed(4))}%`;
+  console.log(coin.market_data);
   const marketCap = `$${convertNumber(coin.market_data.market_cap.usd)}`;
   const ath = `$${convertNumber(coin.market_data.ath.usd)}`;
   const atl = `$${convertNumber(coin.market_data.atl.usd)}`;
@@ -22,7 +23,7 @@ const Overview = ({ coin }) => {
       </Title>
       <Title size={4}>
         {currentPrice}
-        <span className={priceChangeClass}>&nbsp;{priceChange}</span>
+        <span className={priceChangeClass}>{priceChange} (7 days)</span>
       </Title>
       <div className="info">
         {coin.description.en && (
@@ -135,7 +136,7 @@ const StyledOverview = styled.div`
     .card {
       margin-right: 20px;
       p {
-        height: 208px;
+        height: 189px;
         overflow-y: scroll;
         padding-right: 10px;
       }

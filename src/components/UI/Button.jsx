@@ -19,10 +19,8 @@ const StyledButton = styled.button`
   border: 0;
   cursor: pointer;
   &:disabled {
-    background-color: var(--blue-hover);
     &:hover {
       cursor: not-allowed;
-      background-color: var(--blue-hover);
     }
   }
   &:hover {

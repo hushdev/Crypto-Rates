@@ -33,10 +33,6 @@ const CoinListItemGraph = ({ price }) => {
         borderColor: price[0] <= price[price.length - 1] ? "#1f9531" : "#8f1818",
       },
     ],
-    options: {
-      animation: false,
-      showLine: false,
-    },
   };
 
   return (

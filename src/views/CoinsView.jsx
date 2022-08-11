@@ -20,7 +20,6 @@ const CoinsView = ({ baseUrl, ...props }) => {
   };
 
   const prevHandler = () => {
-    if (page < 2) return;
     const newPage = page - 1;
     setPage(newPage);
   };

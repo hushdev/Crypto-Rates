@@ -32,7 +32,6 @@ const StyledMarketCapTopList = styled.div`
     justify-content: space-between;
     align-items: center;
     span {
-      font-size: 14px;
       color: var(--text-gray);
       font-weight: 400;
     }

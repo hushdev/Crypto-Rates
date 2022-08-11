@@ -21,7 +21,6 @@ const StyledGoBackBtn = styled.span`
   align-items: center;
   cursor: pointer;
   color: var(--text-white);
-  font-size: 14px;
 `;
 
 export default GoBackBtn;

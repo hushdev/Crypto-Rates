@@ -7,7 +7,6 @@ import CoinsPagination from "./components/CoinsPagination";
 
 const Coins = ({ list, fetchPrev, fetchNext, page, isFetching }) => {
   const [searchQuery, setSearchQuery] = useState("");
-  console.log(page);
 
   return (
     <StyledCoins>

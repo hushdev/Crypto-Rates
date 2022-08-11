@@ -102,7 +102,6 @@ const StyledCoinCardInfo = styled.div`
         }
         .chip {
           margin-left: 10px;
-          font-size: 12px;
           color: #ffffff;
           &-green {
             background-color: #007d00;

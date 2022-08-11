@@ -73,10 +73,12 @@ const CoinGraph = ({ coin }) => {
     },
     elements: {
       line: {
-        tension: 0.3,
+        tension: 0.4,
+        borderJoinStyle: "round",
       },
       point: {
         radius: pointScale,
+        pointStyle: 'star'
       },
     },
   };

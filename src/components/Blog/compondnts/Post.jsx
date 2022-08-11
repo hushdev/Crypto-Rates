@@ -87,7 +87,6 @@ const StyledPost = styled.div`
       align-items: center;
       justify-content: center;
       h5 {
-        font-size: 20px;
         text-align: center;
       }
       p {
@@ -103,7 +102,6 @@ const StyledPost = styled.div`
       margin-bottom: 20px;
       &-chip {
         margin-right: 5px;
-        font-size: 12px;
         &:last-child {
           margin-right: 0;
         }
@@ -128,7 +126,6 @@ const StyledPost = styled.div`
     p {
       color: var(--text-gray);
       margin-bottom: 20px;
-      font-size: 14px;
       height: 52px;
       overflow: hidden;
     }
@@ -139,7 +136,6 @@ const StyledPost = styled.div`
       margin-top: auto;
       a {
         color: var(--blue);
-        font-size: 14px;
         text-decoration: none;
         &:hover {
           text-decoration: underline;

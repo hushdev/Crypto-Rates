@@ -16,7 +16,6 @@ const StyledFooter = styled.div`
   text-align: center;
   padding: 15px;
   color: var(--text-white);
-  font-size: 12px;
   position: absolute;
   top: calc(100% - 46px);
   left: 50%;

@@ -87,7 +87,6 @@ const StyledCoinListItem = styled.li`
   }
   & span {
     color: var(--text-gray);
-    font-size: 14px;
     font-weight: 400;
     margin: 0 5px;
     &:first-child {

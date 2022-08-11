@@ -43,7 +43,6 @@ const AboutView = () => {
 const StyledAboutView = styled.div`
   p {
     color: var(--text-white);
-    font-size: 16px;
     margin-top: 15px;
     font-weight: 300;
     &:first-child {

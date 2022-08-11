@@ -72,9 +72,6 @@ const StyledCoinCardInfo = styled.div`
             margin-right: 7px;
           }
         }
-        .chip {
-          font-size: 12px;
-        }
       }
     }
   }

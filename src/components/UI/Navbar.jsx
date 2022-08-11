@@ -54,7 +54,6 @@ const StyledNavbar = styled.div`
     padding: 10px 0;
   }
   & .logo {
-    font-size: 16px;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -81,7 +80,6 @@ const StyledNavbar = styled.div`
     }
   }
   & ul a {
-    font-size: 14px;
     margin-right: 10px;
     @media (max-width: 330px) {
       margin-right: 5px;

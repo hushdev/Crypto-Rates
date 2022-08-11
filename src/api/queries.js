@@ -1,24 +1,25 @@
 const coingeckoUrl = "https://api.coingecko.com/api/v3";
 const cryptocompareUrl = "https://min-api.cryptocompare.com/data/v2";
 
-// Getting all coins
+// All coins
 const getRates = async (page) => {
   const response = await fetch(
-    `${coingeckoUrl}/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=30&page=${page}&sparkline=true`
+    `${coingeckoUrl}/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=12&page=${page}&sparkline=true`
   );
   return response.json();
 };
 
+// Top 7 coins by user's searcg
 const getTopSevenCoins = async () => {
   const response = await fetch(`${coingeckoUrl}/search/trending?vs_currency=usd`);
   return response.json()
 };
 
+// Manually selected coins
 const getExactCoins = async (coins) => {
   const response = await fetch(
     `${coingeckoUrl}/coins/markets?vs_currency=usd&ids=${coins}&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=7d`
   );
-
   return response.json();
 };
 
@@ -36,7 +37,7 @@ const getCoinGraph = async (coin, days, interval) => {
   return response.json();
 };
 
-//Getting news t
+//Getting news 
 const getNews = async (page) => {
   const response = await fetch(`${cryptocompareUrl}/news/?lang=EN`);
   return response.json();
