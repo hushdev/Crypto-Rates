@@ -15,10 +15,10 @@ const Navbar = () => {
         <Row justifyContent="space-between" alignItems="center">
           <NavLink to="/" className="logo">
             <LogoSVG />
-            <span>CryptoRates</span>
+            CryptoRates
           </NavLink>
           <ul>
-            <Search className="search-bar"/>
+            <Search className="search-bar" />
             <NavLink to="/">Coins</NavLink>
             <NavLink to="/dashboard">Dashboard</NavLink>
             <NavLink to="/blog">Blog</NavLink>
@@ -52,24 +52,18 @@ const StyledNavbar = styled.div`
   left: 0;
   box-shadow: var(--shadow);
   z-index: 100;
-  @media (max-width: 555px) {
-    padding: 10px 0;
-  }
+
   & .logo {
     font-weight: 500;
     display: flex;
     align-items: center;
     text-decoration: none;
+    color: var(--text-white);
+
     svg {
       width: 25px;
       height: auto;
       margin-right: 5px;
-    }
-    span {
-      color: var(--text-white);
-      @media (max-width: 555px) {
-        display: none;
-      }
     }
   }
   & ul {
@@ -80,24 +74,19 @@ const StyledNavbar = styled.div`
     }
   }
   .nav-theme-toggler {
-    @media (max-width: 450px) {
+    @media (max-width: 495px) {
       margin-right: 0;
     }
   }
   & ul a {
     margin-right: 10px;
-    @media (max-width: 330px) {
-      margin-right: 5px;
-    }
+
     color: var(--text-gray);
     text-decoration: none;
     font-weight: 400;
   }
   & ul .github-btn {
     padding: 5px 10px !important;
-    @media (max-width: 450px) {
-      display: none;
-    }
   }
   & ul .github-btn a.github {
     color: #ffffff;

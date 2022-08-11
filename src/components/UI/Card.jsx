@@ -11,7 +11,7 @@ const Card = ({ children, ...props }) => {
 
 const StyledCard = styled.div`
   border: 1px solid ${props => props.transparent ? 'transparent' : 'var(--gray-decor)'};
-  border-radius: 10px;
+  border-radius: ${props => props.transparent ? '0' : '10px'};
   background-color: ${(props) => (props.transparent ? "transparent" : "var(--gray)")};
   padding: ${props => props.transparent ? '0' : '10px'};
   overflow-y: hidden;

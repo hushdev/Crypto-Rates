@@ -6,8 +6,8 @@ import ErrorMessage from "../components/UI/ErrorMessage";
 import Loader from "../components/UI/Loader";
 
 const BlogView = () => {
-  const { status, data, error } = useQuery("news", () => getNews(1));
-
+  const { status, data, error } = useQuery("news", getNews);
+  console.log(data);
   return (
     <div>
       {status === 'loading' && <Loader/>}

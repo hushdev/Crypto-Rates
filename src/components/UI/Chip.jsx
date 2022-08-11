@@ -5,7 +5,7 @@ const Chip = ({ children, className }) => {
   return <StyledChip className={className}>{children}</StyledChip>;
 };
 
-const StyledChip = styled.div`
+const StyledChip = styled.span`
   padding: 5px 10px;
   background-color: var(--gray-decor);
   color: var(--text-white);
