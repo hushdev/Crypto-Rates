@@ -39,8 +39,8 @@ const ThemeToggler = (props) => {
 };
 
 const StyledThemeToggler = styled.div`
-  width: 40px;
-  height: 20px;
+  width: 35px;
+  height: 18px;
   border-radius: 20px;
   background-color: ${(props) => (props.theme === "dark" ? "#ffffff" : "#444444")};
   border: 1px solid var(--gray-decor);
@@ -50,11 +50,11 @@ const StyledThemeToggler = styled.div`
     cursor: pointer;
   }
   .round {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     transition: all 0.2s linear;
-    transform: translateX(${(props) => (props.theme === "light" ? "20px" : "0")});
+    transform: translateX(${(props) => (props.theme === "light" ? "18px" : "0")});
   }
 `;
 
