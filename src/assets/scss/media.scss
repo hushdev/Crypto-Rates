@@ -1,6 +1,6 @@
 @media (min-width: 1024px) {
   h1 {
-    font-size: 26px;
+    font-size: 24px;
   }
   h2 {
     font-size: 24px;
@@ -12,12 +12,15 @@
     font-size: 20px;
   }
   h5 {
-    font-size: 18px;
+    font-size: 14px;
   }
   h6 {
-    font-size: 16px;
+    font-size: 14px;
   }
-  span, p, a, div {
+  span,
+  p,
+  a,
+  div {
     font-size: 14px;
   }
 }
@@ -35,12 +38,15 @@
     font-size: 18px;
   }
   h5 {
-    font-size: 16px;
-  }
-  h6 {
     font-size: 14px;
   }
-  span, p, a, div {
+  h6 {
+    font-size: 12px;
+  }
+  span,
+  p,
+  a,
+  div {
     font-size: 13px;
   }
 }
@@ -59,12 +65,15 @@
     font-size: 16px;
   }
   h5 {
-    font-size: 14px;
-  }
-  h6 {
     font-size: 12px;
   }
-  span, p, a, div {
+  h6 {
+    font-size: 10px;
+  }
+  span,
+  p,
+  a,
+  div {
     font-size: 12px;
   }
 }
