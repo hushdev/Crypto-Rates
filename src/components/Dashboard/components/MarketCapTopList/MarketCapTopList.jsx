@@ -26,7 +26,7 @@ const MarketCapTopList = () => {
 };
 
 const StyledMarketCapTopList = styled.div`
-  margin-top: 30px;
+  margin-top: 20px;
   & .info-title {
     display: flex;
     justify-content: space-between;

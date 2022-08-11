@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 import Row from "./Row";
 import Button from "./Button";
 import { ReactComponent as LogoSVG } from "../../assets/svg/logo.svg";
+import Search from "../Search/Search";
 
 const Navbar = () => {
   return (
@@ -17,6 +18,7 @@ const Navbar = () => {
             <span>CryptoRates</span>
           </NavLink>
           <ul>
+            <Search className="search-bar"/>
             <NavLink to="/">Coins</NavLink>
             <NavLink to="/dashboard">Dashboard</NavLink>
             <NavLink to="/blog">Blog</NavLink>
@@ -73,6 +75,9 @@ const StyledNavbar = styled.div`
   & ul {
     display: flex;
     align-items: center;
+    .search-bar {
+      margin-right: 10px;
+    }
   }
   .nav-theme-toggler {
     @media (max-width: 450px) {

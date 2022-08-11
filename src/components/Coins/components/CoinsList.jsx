@@ -4,22 +4,10 @@ import Card from "../../UI/Card";
 import ErrorMessage from "../../UI/ErrorMessage";
 import CoinListItem from "./CoinListItem";
 
-const CoinsList = ({ list, searchQuery, ...props }) => {
-  const [filteredList, setFilteredList] = useState([...list]);
-
-  useEffect(() => {
-    if (searchQuery.length <= 1) {
-      setFilteredList([...list]);
-    } else {
-      setFilteredList(
-        list.filter((coin) => coin.name.toLowerCase().trim().includes(searchQuery.toLowerCase().trim()))
-      );
-    }
-  }, [searchQuery, list]);
-
+const CoinsList = ({ list, ...props }) => {
   return (
     <>
-      {filteredList.length > 0 && (
+      {list.length > 0 && (
         <Card transparent>
           <StyledCoinsList>
             <li className="heading">
@@ -32,13 +20,13 @@ const CoinsList = ({ list, searchQuery, ...props }) => {
               <span>7 Days</span>
             </li>
 
-            {filteredList.map((coin, i) => (
+            {list.map((coin, i) => (
               <CoinListItem coin={coin} key={i} />
             ))}
           </StyledCoinsList>
         </Card>
       )}
-      {filteredList.length === 0 && <ErrorMessage>Nothing found</ErrorMessage>}
+      {list.length === 0 && <ErrorMessage>Nothing found</ErrorMessage>}
     </>
   );
 };

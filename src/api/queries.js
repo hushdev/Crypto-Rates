@@ -43,4 +43,9 @@ const getNews = async (page) => {
   return response.json();
 };
 
-export { getRates, getExactCoins, getCoinInfo, getCoinGraph, getNews, getTopSevenCoins };
+// Search coins
+const searchCoins = async (query) => {
+  const response = await fetch(`${coingeckoUrl}/search?query=${query}`);
+  return response.json();
+}
+export { getRates, getExactCoins, getCoinInfo, getCoinGraph, getNews, getTopSevenCoins, searchCoins };

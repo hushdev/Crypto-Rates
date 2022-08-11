@@ -8,7 +8,7 @@ const Input = ({ placeholder, className, type, value, onChange, icon, ...props }
   }
 
   return (
-    <StyledInputWrap>
+    <StyledInputWrap hasIcon={icon && true}>
       {icon && <img src={iconUrl} alt="Input icon" />}
       <input
         type={type}
@@ -25,24 +25,28 @@ const Input = ({ placeholder, className, type, value, onChange, icon, ...props }
 const StyledInputWrap = styled.div`
   display: flex;
   align-items: center;
+  position: relative;
   & input {
-    padding: 10px;
+    padding: ${props => props.hasIcon ? '5px 30px 5px 10px' : '5px 10px'};
     color: var(--text-white);
-    background-color: transparent;
+    background-color: var(--gray-light);
     border: 0;
     border-radius: 10px;
     &:focus {
       box-shadow: var(--shadow);
-      background-color: var(--gray);
     }
     &::placeholder {
       color: var(--text-gray);
+      font-size: 12px;
     }
   }
   & img {
-    width: 15px;
+    width: 12px;
     height: auto;
-    margin-right: 5px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
   }
 `;
 
