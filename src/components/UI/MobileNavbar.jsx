@@ -51,11 +51,10 @@ const StyledMobileNavbar = styled.nav`
     .nav-card {
       width: 100%;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       overflow: visible;
       background-color: var(--gray-transparent);
       backdrop-filter: blur(5px);
-      padding: 10px 15px;
       a {
         color: var(--text-gray);
         text-decoration: none;

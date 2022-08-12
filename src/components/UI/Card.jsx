@@ -20,7 +20,7 @@ const StyledCard = styled.div`
   height: ${(props) => (props.height ? props.height : "auto")};
 
   @media (max-width:480px) {
-    padding: 10px 10px;
+    padding: ${props => props.transparent ? '0' : '10px 10px'};
   }
 `;
 
