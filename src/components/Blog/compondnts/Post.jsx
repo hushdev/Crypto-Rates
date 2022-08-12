@@ -7,7 +7,7 @@ import Title from "../../UI/Title";
 const Post = ({ post }) => {
   const categories = post?.categories?.split("|").slice(0, 3);
   const title = post?.title?.substr(0, 70);
-
+  const body = post?.body?.substr(0, 95) + " ...";
   return (
     <StyledPost>
       <Card className={`${post.lastPost && "post-last"} post`}>
@@ -22,7 +22,7 @@ const Post = ({ post }) => {
           {post?.imageurl && <img src={post?.imageurl} alt={post?.title} />}
           {title}
         </Title>
-        <p dangerouslySetInnerHTML={{ __html: post?.body }}></p>
+        <p dangerouslySetInnerHTML={{ __html: body }}></p>
         <div className="footer">
           <a href={post?.guid} target="_blank" rel="noreferrer">
             {post?.guid && "Read More"}

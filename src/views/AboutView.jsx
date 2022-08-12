@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Title from "../components/UI/Title";
+import Footer from "../components/UI/Footer";
 
 const AboutView = () => {
   return (
@@ -36,6 +37,7 @@ const AboutView = () => {
         </a>
         .
       </p>
+      <Footer />
     </StyledAboutView>
   );
 };

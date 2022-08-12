@@ -103,6 +103,8 @@ const StyledOverview = styled.div`
     }
   }
   & h4 {
+    display: flex;
+    align-items: center;
     span {
       color: var(--text-white);
       margin-left: 15px;

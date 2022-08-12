@@ -11,6 +11,10 @@ const StyledChip = styled.span`
   color: var(--text-white);
   width: min-content;
   border-radius: 7px;
+  @media (max-width:768px) {
+    padding: 3px 7px;
+    font-size: 10px !important;
+  }
   &:hover {
     background-color: var(--gray);
   }

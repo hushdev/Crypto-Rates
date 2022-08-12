@@ -15,7 +15,7 @@ const Navbar = () => {
         <Row justifyContent="space-between" alignItems="center">
           <NavLink to="/" className="logo">
             <LogoSVG />
-            CryptoRates
+            <div>CryptoRates</div>
           </NavLink>
           <ul>
             <Search className="search-bar" />
@@ -70,12 +70,8 @@ const StyledNavbar = styled.div`
     display: flex;
     align-items: center;
     .search-bar {
+      width: 170px;
       margin-right: 10px;
-    }
-  }
-  .nav-theme-toggler {
-    @media (max-width: 495px) {
-      margin-right: 0;
     }
   }
   & ul a {
@@ -95,6 +91,19 @@ const StyledNavbar = styled.div`
   & ul .active {
     color: var(--text-white);
     font-weight: 500;
+  }
+  @media (max-width: 660px) {
+  padding: 8px 0;
+    & .logo div {
+      display: none;
+    }
+    & ul a, & ul .github-btn {display: none;}
+    & ul .nav-theme-toggler {
+      margin-right: 0;
+    }
+    & ul .search-bar {
+      width: 150px;
+    }
   }
 `;
 

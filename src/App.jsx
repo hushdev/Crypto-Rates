@@ -12,6 +12,7 @@ import DashboardView from "./views/DashboardView";
 import GraphView from "./views/GraphView";
 import CoinsView from "./views/CoinsView";
 import BlogView from "./views/BlogView";
+import MobileNavbar from "./components/UI/MobileNavbar";
 
 const App = () => {
   const location = useLocation();
@@ -22,6 +23,7 @@ const App = () => {
     <StyledApp>
       <QueryClientProvider client={queryClient}>
         <Navbar />
+        <MobileNavbar />
         <Container>
           <TransitionGroup component={'div'}>
             <CSSTransition
@@ -49,7 +51,7 @@ const StyledApp = styled.div`
   /* min-height: 100vh; */
   /* height: 100%; */
   position: relative;
-  padding-bottom: 45px;
+  padding-bottom: 100px;
 `;
 
 export default App;

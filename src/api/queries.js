@@ -38,7 +38,7 @@ const getCoinGraph = async (coin, days, interval) => {
 };
 
 //Getting news 
-const getNews = async (page) => {
+const getNews = async () => {
   const response = await fetch(`${cryptocompareUrl}/news/?lang=EN`);
   return response.json();
 };
@@ -48,4 +48,5 @@ const searchCoins = async (query) => {
   const response = await fetch(`${coingeckoUrl}/search?query=${query}`);
   return response.json();
 }
+
 export { getRates, getExactCoins, getCoinInfo, getCoinGraph, getNews, getTopSevenCoins, searchCoins };

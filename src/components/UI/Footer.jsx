@@ -13,13 +13,8 @@ const Footer = () => {
 };
 
 const StyledFooter = styled.div`
-  text-align: center;
-  padding: 15px;
   color: var(--text-white);
-  position: absolute;
-  top: calc(100% - 46px);
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 25px;
   & a {
     color: var(--text-white);
     text-decoration: none;

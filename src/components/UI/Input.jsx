@@ -32,6 +32,7 @@ const StyledInputWrap = styled.div`
     background-color: var(--gray-light);
     border: 0;
     border-radius: 10px;
+    width: 100%;
     &:focus {
       box-shadow: var(--shadow);
     }
