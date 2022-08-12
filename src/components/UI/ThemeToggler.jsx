@@ -39,7 +39,7 @@ const ThemeToggler = (props) => {
 };
 
 const StyledThemeToggler = styled.div`
-  width: 35px;
+  min-width: 35px;
   height: 18px;
   border-radius: 20px;
   background-color: ${(props) => (props.theme === "dark" ? "#ffffff" : "#444444")};
