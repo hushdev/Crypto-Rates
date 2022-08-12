@@ -12,7 +12,7 @@ const Search = ({ className }) => {
   const [searchQuery] = useDebounce(searchText.toLowerCase(), 500);
   const [list, setList] = useState([]);
 
-  const { data, isFetching, isError, error, refetch } = useQuery("search", () => searchCoins(searchQuery), {
+  const { data, error, refetch } = useQuery("search", () => searchCoins(searchQuery), {
     enabled: searchQuery?.length >= 3,
   });
 

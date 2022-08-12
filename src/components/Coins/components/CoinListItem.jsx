@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import convertNumber from "../../../utils/convert-number";
@@ -6,38 +6,10 @@ import CoinListItemGraph from "./CoinListItemGraph";
 import SaveBtn from "../../UI/SaveBtn";
 
 const CoinListItem = ({ coin }) => {
-  useEffect(() => {
-    setIsSaved(false);
-    const savedCoins = JSON.parse(localStorage.getItem("savedCoins"));
-    savedCoins?.length > 0 &&
-      savedCoins.forEach((item) => {
-        if (item === coin.id) setIsSaved(true);
-      });
-  }, [coin]);
-
-  const [isSaved, setIsSaved] = useState(false);
-
-  const saveCoinHandler = () => {
-    let saveCoinsArr = localStorage.getItem("savedCoins")
-      ? JSON.parse(localStorage.getItem("savedCoins"))
-      : [];
-
-    if (isSaved) {
-      saveCoinsArr = saveCoinsArr.filter((item) => item !== coin.id);
-      localStorage.setItem("savedCoins", JSON.stringify(saveCoinsArr));
-      setIsSaved(false);
-      return;
-    }
-
-    saveCoinsArr.push(coin.id);
-    localStorage.setItem("savedCoins", JSON.stringify(saveCoinsArr));
-    setIsSaved(true);
-  };
-
-  return (
+   return (
     <StyledCoinListItem>
       <span className="image">
-        <SaveBtn onClick={saveCoinHandler} active={isSaved} />
+        <SaveBtn coin={coin.id} />
         <NavLink to={`graph/${coin.id}`}>
           <img src={coin.image} alt={coin.name} loading="lazy" />
         </NavLink>

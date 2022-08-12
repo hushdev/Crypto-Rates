@@ -25,10 +25,7 @@ const SavedCoins = () => {
   }, []);
 
   const removeCoinHandler = (coinId) => {
-    const newSavedCoins = savedCoins.filter((item) => item !== coinId);
     const newCoinsList = coinsList.filter((item) => item.id !== coinId);
-    localStorage.setItem("savedCoins", JSON.stringify(newSavedCoins));
-    setSavedCoins(newSavedCoins);
     setCoinsList(newCoinsList);
   };
 

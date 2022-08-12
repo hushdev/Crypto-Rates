@@ -48,7 +48,7 @@ const StyledCoinCardInfo = styled.div`
       margin: 0 0 10px 0;
     }
     &:last-child {
-      margin: 0;
+      margin: 10px 0 0 0;
     }
   }
   .navlink {

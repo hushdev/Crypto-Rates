@@ -3,9 +3,9 @@ import styled from "styled-components";
 import Card from "../UI/Card";
 import ErrorMessage from "../UI/ErrorMessage";
 import { NavLink } from "react-router-dom";
+import SaveBtn from "../UI/SaveBtn";
 
 const SearchResults = ({ list, error }) => {
-  console.log(list);
   return (
     <StyledSearchResults>
       <Card className="results">
@@ -15,9 +15,10 @@ const SearchResults = ({ list, error }) => {
             list.map((coin) => (
               <li key={coin.id}>
                 <NavLink to={`graph/${coin.id}`}>
-                  <img src={coin.thumb} />
+                  <img src={coin.thumb} alt={coin.name}/>
                   {coin.name}
                 </NavLink>
+                <SaveBtn coin={coin.id}/>
               </li>
             ))}
         </ul>
@@ -35,6 +36,7 @@ const StyledSearchResults = styled.div`
   .results {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+    overflow-x: hidden;
     ul {
       display: flex;
       flex-direction: column;
@@ -43,6 +45,10 @@ const StyledSearchResults = styled.div`
       max-height: 200px;
       overflow-y: auto;
       li {
+        display: flex;
+        padding-right: 10px;
+        width: calc(100% - 10px);
+        justify-content: space-between;
         a {
           display: flex;
           align-items: center;

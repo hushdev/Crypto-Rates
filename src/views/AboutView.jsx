@@ -7,10 +7,10 @@ const AboutView = () => {
   return (
     <StyledAboutView>
       <Title size={2}>📔 About</Title>
-      <p>This is an app to fetch crypto data, view graphs, discover dashboard and read the blog.</p>
+      <p>This is a React-SPA to fetch coins data and work with that</p>
       <p>
-        Frontend tech stack: React, react-query, react-router-dom, styled-components, sass (scss),
-        react-transition-group, chart.js, react-chartjs-2.
+        Frontend tech stack: react, react-query, react-router-dom, styled-components, sass (scss),
+        react-transition-group, chart.js, react-chartjs-2, use-debounce.
       </p>
       <br />
       <p>

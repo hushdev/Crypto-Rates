@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import convertNumber from "../../../../utils/convert-number";
@@ -9,16 +9,6 @@ import CoinCardGraph from "./CoinCardGraph";
 import SaveBtn from "../../../UI/SaveBtn";
 
 const CoinCardInfo = ({ coin, onRemove }) => {
-  useEffect(() => {
-    const savedCoins = JSON.parse(localStorage.getItem("savedCoins"));
-    savedCoins?.length > 0 &&
-      savedCoins.forEach((item) => {
-        if (item === coin.id) setIsSaved(true);
-      });
-  }, [coin.id]);
-
-  const [isSaved, setIsSaved] = useState(false);
-
   const price = convertNumber(coin.current_price);
 
   const priceChangeClass =
@@ -44,7 +34,7 @@ const CoinCardInfo = ({ coin, onRemove }) => {
           </Title>
           <div className="footer">
             <CoinCardGraph price={coin.sparkline_in_7d.price} />
-            <SaveBtn active={isSaved} onClick={removeCoin} />
+            <SaveBtn coin={coin.id} onClick={removeCoin} />
           </div>
         </Card>
       </NavLink>
@@ -75,7 +65,7 @@ const StyledCoinCardInfo = styled.div`
       margin: 0 0 10px 0;
     }
     &:last-child {
-      margin: 0;
+      margin: 10px 0 0 0;
     }
   }
   .navlink {

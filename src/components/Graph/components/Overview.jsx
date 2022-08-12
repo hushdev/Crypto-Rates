@@ -3,6 +3,7 @@ import styled from "styled-components";
 import convertNumber from "../../../utils/convert-number";
 import Card from "../../UI/Card";
 import Chip from "../../UI/Chip";
+import SaveBtn from "../../UI/SaveBtn";
 import Title from "../../UI/Title";
 
 const Overview = ({ coin }) => {
@@ -20,6 +21,7 @@ const Overview = ({ coin }) => {
       <Title size={2}>
         <img src={coin.image.small} alt={coin.name} />
         {coin.name}
+        <SaveBtn showLabel coin={coin.id} className="save-btn"/>
       </Title>
       <Title size={4}>
         {currentPrice}
@@ -96,10 +98,14 @@ const StyledOverview = styled.div`
   & h2 {
     display: flex;
     align-items: center;
+    width: 100%;
     img {
       margin-right: 10px;
       width: 40px;
       height: auto;
+    }
+    .save-btn {
+      margin-left: auto;
     }
   }
   & h4 {
