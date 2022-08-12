@@ -14,7 +14,7 @@ const MarketCapTopList = () => {
     <StyledMarketCapTopList>
       {error && <ErrorMessage>{error.message}</ErrorMessage>}
       <Title size={2} className="info-title">
-        TOP searching list <span>{data ? "24 hours" : "The list is unavailable"}</span>
+        🔝 TOP searching list <span>{data ? "24 hours" : "The list is unavailable"}</span>
       </Title>
       <Row flexWrap="wrap" overflowX="auto" padding="0 0 20px 0">
         {data?.coins.map((coin, i) => (
