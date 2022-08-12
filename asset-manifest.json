@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Crypto-Rates/static/css/main.9cd29a87.css",
-    "main.js": "/Crypto-Rates/static/js/main.9497ce8f.js",
+    "main.js": "/Crypto-Rates/static/js/main.8b6faf88.js",
     "static/media/logo.svg": "/Crypto-Rates/static/media/logo.d361ac9c0f3ddcba0e04a5604ea1c8dc.svg",
     "static/media/sun.svg": "/Crypto-Rates/static/media/sun.b62612de7896f26b8a75301b278c0761.svg",
     "index.html": "/Crypto-Rates/index.html",
@@ -16,10 +16,10 @@
     "static/media/search.svg": "/Crypto-Rates/static/media/search.49cb5d0bc7be2183bfac.svg",
     "static/media/arrow.svg": "/Crypto-Rates/static/media/arrow.00c9db9c72271abf86bddd11e643888e.svg",
     "main.9cd29a87.css.map": "/Crypto-Rates/static/css/main.9cd29a87.css.map",
-    "main.9497ce8f.js.map": "/Crypto-Rates/static/js/main.9497ce8f.js.map"
+    "main.8b6faf88.js.map": "/Crypto-Rates/static/js/main.8b6faf88.js.map"
   },
   "entrypoints": [
     "static/css/main.9cd29a87.css",
-    "static/js/main.9497ce8f.js"
+    "static/js/main.8b6faf88.js"
   ]
 }
