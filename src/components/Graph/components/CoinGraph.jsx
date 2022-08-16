@@ -126,6 +126,9 @@ const CoinGraph = ({ coin }) => {
 
 const StyledCoinGraph = styled.div`
   margin-top: 40px;
+  @media (max-width: 760px) {
+    margin-top: 20px;
+  }
   .switchers {
     display: flex;
     flex-wrap: wrap;

@@ -57,7 +57,6 @@ const GraphSwitcher = ({ onClick, type, className, disabled }) => {
 };
 
 const StyledGraphSwitcher = styled.div`
-  margin-bottom: 10px;
   display: flex;
   flex-wrap: nowrap;
   overflow: auto;
@@ -68,6 +67,10 @@ const StyledGraphSwitcher = styled.div`
     color: var(--text-white);
     margin-top: 5px;
     min-width: max-content;
+    font-size: 12px;
+    @media (max-width: 760px) {
+      padding: 3px 7px;
+    }
     &:disabled {
       filter: brightness(80%);
     }
@@ -77,7 +80,6 @@ const StyledGraphSwitcher = styled.div`
     &:first-child {
       border-top-left-radius: 5px;
       border-bottom-left-radius: 5px;
-
     }
     &:last-child {
       border-top-right-radius: 5px;

@@ -42,13 +42,12 @@ const StyledMobileNavbar = styled.nav`
   @media (max-width: 660px) {
     display: flex;
     position: fixed;
-    bottom: 10px;
-    right: 10px;
-    left: 50%;
-    width: calc(100% - 20px);
-    transform: translateX(-50%);
+    bottom: 0;
+    left: 0;
+    width: 100%;
     z-index: 100;
     .nav-card {
+      border-radius: 0;
       width: 100%;
       display: flex;
       justify-content: space-around;

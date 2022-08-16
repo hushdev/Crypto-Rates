@@ -14,7 +14,7 @@ const Footer = () => {
 
 const StyledFooter = styled.div`
   color: var(--text-white);
-  margin-top: 25px;
+  margin-top: 20px;
   & a {
     color: var(--text-white);
     text-decoration: none;

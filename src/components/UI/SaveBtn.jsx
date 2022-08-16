@@ -55,16 +55,21 @@ const StyledSaveBtn = styled.div`
     &:hover {
       fill: var(--blue-hover);
     }
+    @media (max-width: 760px) {
+      &:hover {
+        pointer-events: none;
+      }
+    }
   }
   @keyframes bounce {
     0% {
-      transform: ${props => props.showLabel ? 'scale(1.4)' : 'scale(1)'};
+      transform: ${(props) => (props.showLabel ? "scale(1.4) translateY(-1px)" : "scale(1)")};
     }
     50% {
       transform: scale(1.7);
     }
     100% {
-      transform: ${props => props.showLabel ? 'scale(1.4)' : 'scale(1)'};
+      transform: ${(props) => (props.showLabel ? "scale(1.4) translateY(-1px)" : "scale(1)")};
     }
   }
 `;

@@ -6,7 +6,6 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import Container from "./components/UI/Container";
 import Navbar from "./components/UI/Navbar";
-// import Footer from "./components/UI/Footer";
 import AboutView from "./views/AboutView";
 import DashboardView from "./views/DashboardView";
 import GraphView from "./views/GraphView";
@@ -25,12 +24,8 @@ const App = () => {
         <Navbar />
         <MobileNavbar />
         <Container>
-          <TransitionGroup component={'div'}>
-            <CSSTransition
-              key={location.key}
-              classNames="fade"
-              timeout={300}
-            >
+          <TransitionGroup component={"div"}>
+            <CSSTransition key={location.key} classNames="fade" timeout={300}>
               <Routes>
                 <Route path="/" element={<CoinsView baseUrl={baseUrl} />} />
                 <Route path="/graph/:id" element={<GraphView />} />
@@ -40,7 +35,6 @@ const App = () => {
               </Routes>
             </CSSTransition>
           </TransitionGroup>
-          {/* <Footer /> */}
         </Container>
       </QueryClientProvider>
     </StyledApp>
@@ -48,10 +42,11 @@ const App = () => {
 };
 
 const StyledApp = styled.div`
-  /* min-height: 100vh; */
-  /* height: 100%; */
   position: relative;
-  padding-bottom: 100px;
+  padding-bottom: 20px;
+  @media (max-width: 660px) {
+    padding-bottom: 64px;
+  }
 `;
 
 export default App;
