@@ -39,7 +39,7 @@ const MobileNavbar = () => {
 
 const StyledMobileNavbar = styled.nav`
   display: none;
-  @media (max-width: 660px) {
+  @media (max-width: 730px) {
     display: flex;
     position: fixed;
     bottom: 0;
