@@ -39,8 +39,7 @@ const CoinGraph = ({ coin }) => {
 
   useEffect(() => {
     refetch();
-    period >= 365 ? setPointScale(1) : setPointScale(3);
-    period === "max" ? setPointScale(0) : setPointScale(3);
+    period >= 30 || period === 'max' ? setPointScale(0) : setPointScale(3);
   }, [period, refetch]);
 
   useEffect(() => {
@@ -90,7 +89,7 @@ const CoinGraph = ({ coin }) => {
         fill: true,
         label: `${coin.name} ${categoryTitle} in USD`,
         data: YLabels,
-        borderWidth: 2,
+        borderWidth: 1,
         borderColor: YLabels[0] < YLabels[YLabels.length - 1] ? "#1f9531" : "#8f1818",
         backgroundColor: YLabels[0] < YLabels[YLabels.length - 1] ? "#1f953130" : "#8f18182c",
       },
