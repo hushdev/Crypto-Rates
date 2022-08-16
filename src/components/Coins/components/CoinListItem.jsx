@@ -41,9 +41,6 @@ const StyledCoinListItem = styled.li`
   &:last-child {
     border-bottom: 0;
   }
-  &:hover {
-    background-color: var(--gray);
-  }
 
   & span.image {
     max-width: 55px;
