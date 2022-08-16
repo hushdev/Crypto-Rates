@@ -92,12 +92,15 @@ const StyledNavbar = styled.div`
     color: var(--text-white);
     font-weight: 500;
   }
-  @media (max-width: 660px) {
-  padding: 8px 0;
+  @media (max-width: 730px) {
+    padding: 8px 0;
     & .logo div {
       display: none;
     }
-    & ul a, & ul .github-btn {display: none;}
+    & ul a,
+    & ul .github-btn {
+      display: none;
+    }
     & ul .nav-theme-toggler {
       margin-right: 0;
     }

@@ -6,13 +6,14 @@ import { searchCoins } from "../../api/queries";
 import Input from "../UI/Input";
 import SearchResults from "./SearchResults";
 import { CSSTransition } from "react-transition-group";
+import Loader from "../UI/Loader";
 
 const Search = ({ className }) => {
   const [searchText, setSearchText] = useState("");
   const [searchQuery] = useDebounce(searchText.toLowerCase(), 500);
   const [list, setList] = useState([]);
 
-  const { data, error, refetch } = useQuery("search", () => searchCoins(searchQuery), {
+  const { data, error, refetch, isFetching } = useQuery("search", () => searchCoins(searchQuery), {
     enabled: searchQuery?.length >= 3,
   });
 
@@ -28,6 +29,7 @@ const Search = ({ className }) => {
 
   return (
     <StyledSearch className={className}>
+      {isFetching && <Loader className="search-loader" />}
       <Input
         placeholder="Search coins (min 3 symbols)"
         type="text"
@@ -50,6 +52,11 @@ const StyledSearch = styled.div`
   align-items: center;
   width: 100% !important;
   max-width: 300px;
+  .search-loader {
+    position: absolute;
+    left: -40px;
+    transform: scale(0.4);
+  }
   input {
     z-index: 1;
     width: 100% !important;
