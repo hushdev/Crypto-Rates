@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Title from "../../../UI/Title";
-import Row from "../../../UI/Row";
-import ErrorMessage from "../../../UI/ErrorMessage";
+import Title from "../../../../components/UI/Title";
+import Row from "../../../../components/UI/Row";
+import ErrorMessage from "../../../../components/UI/ErrorMessage";
 import { useQuery } from "react-query";
 import { getTopSevenCoins } from "../../../../api/queries";
 import MarketCapTopListCard from "./MarketCapTopListCard";

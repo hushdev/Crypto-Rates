@@ -1,6 +1,6 @@
 import React from "react";
-import Overview from "./components/Overview";
-import CoinGraph from "./components/CoinGraph";
+import Overview from "./Overview";
+import CoinGraph from "./CoinGraph";
 
 const Graph = ({ coin }) => {
   return (

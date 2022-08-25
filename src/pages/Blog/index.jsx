@@ -1,11 +1,11 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { getNews } from "../api/queries";
-import Blog from "../components/Blog/Blog";
-import ErrorMessage from "../components/UI/ErrorMessage";
-import Loader from "../components/UI/Loader";
+import { getNews } from "../../api/queries";
+import Blog from "./components/Blog";
+import ErrorMessage from "../../components/UI/ErrorMessage";
+import Loader from "../../components/UI/Loader";
 
-const BlogView = () => {
+const BlogPage = () => {
   const { status, data, error } = useQuery("news", getNews);
   
   return (
@@ -17,4 +17,4 @@ const BlogView = () => {
   );
 };
 
-export default BlogView;
+export default BlogPage;

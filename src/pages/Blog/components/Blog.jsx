@@ -1,8 +1,8 @@
 import React from "react";
-import ErrorMessage from "../UI/ErrorMessage";
-import Row from "../UI/Row";
-import Title from "../UI/Title";
-import Post from "./compondnts/Post";
+import ErrorMessage from "../../../components/UI/ErrorMessage";
+import Row from "../../../components/UI/Row";
+import Title from "../../../components/UI/Title";
+import Post from "./Post";
 
 const Blog = ({ posts }) => {
   const lastPost = {

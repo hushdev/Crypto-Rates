@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../../UI/Button";
-import Loader from "../../UI/Loader";
+import Button from "../../../components/UI/Button";
+import Loader from "../../../components/UI/Loader";
 import { ReactComponent as ArrowSVG } from "../../../assets/svg/bold-arrow.svg";
   
 const CoinsPagination = ({ fetchPrev, fetchNext, page, isFetching }) => {

@@ -6,11 +6,11 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import Container from "./components/UI/Container";
 import Navbar from "./components/UI/Navbar";
-import AboutView from "./views/AboutView";
-import DashboardView from "./views/DashboardView";
-import GraphView from "./views/GraphView";
-import CoinsView from "./views/CoinsView";
-import BlogView from "./views/BlogView";
+import AboutPage from "./pages/About";
+import DashboardPage from "./pages/Dashboard";
+import GraphPage from "./pages/Graph";
+import CoinsView from "./pages/Coins";
+import BlogPage from "./pages/Blog";
 import MobileNavbar from "./components/UI/MobileNavbar";
 
 const App = () => {
@@ -28,10 +28,10 @@ const App = () => {
             <CSSTransition key={location.key} classNames="fade" timeout={300}>
               <Routes>
                 <Route path="/" element={<CoinsView baseUrl={baseUrl} />} />
-                <Route path="/graph/:id" element={<GraphView />} />
-                <Route path="/dashboard" element={<DashboardView />} />
-                <Route path="/about" element={<AboutView />} />
-                <Route path="/blog" element={<BlogView />} />
+                <Route path="/graph/:id" element={<GraphPage />} />
+                <Route path="/dashboard" element={<DashboardPage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/blog" element={<BlogPage />} />
               </Routes>
             </CSSTransition>
           </TransitionGroup>

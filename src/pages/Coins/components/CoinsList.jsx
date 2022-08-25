@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import Card from "../../UI/Card";
-import ErrorMessage from "../../UI/ErrorMessage";
+import Card from "../../../components/UI/Card";
+import ErrorMessage from "../../../components/UI/ErrorMessage";
 import CoinListItem from "./CoinListItem";
 
 const CoinsList = ({ list, ...props }) => {

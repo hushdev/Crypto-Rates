@@ -1,13 +1,13 @@
 import React from "react";
-import GoBackBtn from "../components/UI/GoBackBtn";
+import GoBackBtn from "../../components/UI/GoBackBtn";
 import { useQuery } from "react-query";
-import { getCoinInfo } from "../api/queries";
+import { getCoinInfo } from "../../api/queries";
 import { useParams } from "react-router-dom";
-import Loader from "../components/UI/Loader";
-import Graph from "../components/Graph/Graph";
-import ErrorMessage from "../components/UI/ErrorMessage";
+import Loader from "../../components/UI/Loader";
+import Graph from "./components/Graph";
+import ErrorMessage from "../../components/UI/ErrorMessage";
 
-const GraphView = () => {
+const GraphPage = () => {
   const coin = useParams().id;
   const { status, data, error } = useQuery("coinInfo", () => getCoinInfo(coin));
 
@@ -21,4 +21,4 @@ const GraphView = () => {
   );
 };
 
-export default GraphView;
+export default GraphPage;

@@ -1,6 +1,6 @@
 import React from "react";
-import MarketCapTopList from "./components/MarketCapTopList/MarketCapTopList";
-import SavedCoins from "./components/SavedCoins/SavedCoins";
+import MarketCapTopList from "./MarketCapTopList/MarketCapTopList";
+import SavedCoins from "./SavedCoins/SavedCoins";
 
 const Dashboard = () => {
   return (

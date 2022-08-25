@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import Title from "../UI/Title";
-import CoinsList from "./components/CoinsList";
-import CoinsPagination from "./components/CoinsPagination";
+import Title from "../../../components/UI/Title";
+import CoinsList from "./CoinsList";
+import CoinsPagination from "./CoinsPagination";
 
 const Coins = ({ list, fetchPrev, fetchNext, page, isFetching }) => {
   return (

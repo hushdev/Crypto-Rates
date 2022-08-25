@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Card from "../../UI/Card";
-import Chip from "../../UI/Chip";
-import Title from "../../UI/Title";
+import Card from "../../../components/UI/Card";
+import Chip from "../../../components/UI/Chip";
+import Title from "../../../components/UI/Title";
 
 const Post = ({ post }) => {
   const categories = post?.categories?.split("|").slice(0, 3);

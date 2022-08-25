@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import Title from "../components/UI/Title";
-import Footer from "../components/UI/Footer";
+import Title from "../../components/UI/Title";
+import Footer from "../../components/UI/Footer";
 
-const AboutView = () => {
+const AboutPage = () => {
   return (
-    <StyledAboutView>
+    <StyledAboutPage>
       <Title size={2}>📔 About</Title>
       <p>This is a React-SPA to fetch coins data and work with that</p>
       <p>
@@ -38,11 +38,11 @@ const AboutView = () => {
         .
       </p>
       <Footer />
-    </StyledAboutView>
+    </StyledAboutPage>
   );
 };
 
-const StyledAboutView = styled.div`
+const StyledAboutPage = styled.div`
   p {
     color: var(--text-white);
     margin-top: 15px;
@@ -56,4 +56,4 @@ const StyledAboutView = styled.div`
   }
 `;
 
-export default AboutView;
+export default AboutPage;

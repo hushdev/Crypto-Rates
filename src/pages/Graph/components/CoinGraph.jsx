@@ -3,8 +3,8 @@ import { useQuery } from "react-query";
 import styled from "styled-components";
 import { getCoinGraph } from "../../../api/queries";
 import convertUTC from "../../../utils/convert-utc";
-import ErrorMessage from "../../UI/ErrorMessage";
-import Loader from "../../UI/Loader";
+import ErrorMessage from "../../../components/UI/ErrorMessage";
+import Loader from "../../../components/UI/Loader";
 
 import {
   Chart as ChartJS,

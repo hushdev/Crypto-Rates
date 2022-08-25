@@ -1,12 +1,25 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import Card from "../../../UI/Card";
-import Chip from "../../../UI/Chip";
-import Title from "../../../UI/Title";
+import convertNumber from "../../../../utils/convert-number";
+import Card from "../../../../components/UI/Card";
+import Chip from "../../../../components/UI/Chip";
+import Title from "../../../../components/UI/Title";
+import CoinCardGraph from "./CoinCardGraph";
+import SaveBtn from "../../../../components/UI/SaveBtn";
 
-const CoinCardInfo = ({ coin }) => {
-  const rank = coin.market_cap_rank;
+const CoinCardInfo = ({ coin, onRemove }) => {
+  const price = convertNumber(coin.current_price);
+
+  const priceChangeClass =
+    coin.sparkline_in_7d.price[0] <= coin.sparkline_in_7d.price[coin.sparkline_in_7d.price.length - 1]
+      ? "chip-green"
+      : "chip-red";
+
+  const removeCoin = (e) => {
+    e.preventDefault();
+    onRemove(coin.id);
+  };
 
   return (
     <StyledCoinCardInfo>
@@ -14,11 +27,15 @@ const CoinCardInfo = ({ coin }) => {
         <Card className="card">
           <Title size={4} className="title">
             <span className="title-main">
-              <img src={coin.small} alt={coin.name} />
+              <img src={coin.image} alt={coin.name} />
               {coin.name}
             </span>
-            <Chip className="chip">#{rank}</Chip>
+            <Chip className={`chip ${priceChangeClass}`}>${price}</Chip>
           </Title>
+          <div className="footer">
+            <CoinCardGraph price={coin.sparkline_in_7d.price} />
+            <SaveBtn coin={coin.id} onClick={removeCoin} />
+          </div>
         </Card>
       </NavLink>
     </StyledCoinCardInfo>
@@ -48,7 +65,7 @@ const StyledCoinCardInfo = styled.div`
       margin: 0 0 10px 0;
     }
     &:last-child {
-      margin: 10px 0 0 0;
+      margin: 10px 0 10px 0;
     }
   }
   .navlink {
@@ -58,6 +75,7 @@ const StyledCoinCardInfo = styled.div`
       flex-direction: column;
       justify-content: space-between;
       overflow: hidden;
+      height: 127px;
       .title {
         display: flex;
         justify-content: space-between;
@@ -72,6 +90,22 @@ const StyledCoinCardInfo = styled.div`
             margin-right: 7px;
           }
         }
+        .chip {
+          margin-left: 10px;
+          color: #ffffff;
+          &-green {
+            background-color: #007d00;
+          }
+          &-red {
+            background-color: #960000;
+          }
+        }
+      }
+
+      .footer {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
       }
     }
   }

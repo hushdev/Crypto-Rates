@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 import { useQuery } from "react-query";
-import { getRates } from "../api/queries";
-import Coins from "../components/Coins/Coins";
-import Loader from "../components/UI/Loader";
-import ErrorMessage from "../components/UI/ErrorMessage";
+import { getRates } from "../../api/queries";
+import Coins from "./components/Coins";
+import Loader from "../../components/UI/Loader";
+import ErrorMessage from "../../components/UI/ErrorMessage";
 
-const CoinsView = ({ baseUrl, ...props }) => {
+const CoinsPage = ({ baseUrl, ...props }) => {
   const [page, setPage] = useState(1);
-  const { isLoading, data, error, refetch, isFetching, isPreviousData } = useQuery(["rates", page], () => getRates(page), {keepPreviousData: true});
-
-  useState(() => {
-    refetch();
-  }, [page]);
+  const { isLoading, data, error, isFetching, isPreviousData } = useQuery(["rates", page], () => getRates(page), {keepPreviousData: true});
 
   const nextHandler = () => {
     if (isPreviousData || data?.length === 0) return
@@ -33,4 +29,4 @@ const CoinsView = ({ baseUrl, ...props }) => {
   );
 };
 
-export default CoinsView;
+export default CoinsPage;

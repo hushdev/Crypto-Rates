@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import convertNumber from "../../../utils/convert-number";
-import Card from "../../UI/Card";
-import Chip from "../../UI/Chip";
-import SaveBtn from "../../UI/SaveBtn";
-import Title from "../../UI/Title";
+import Card from "../../../components/UI/Card";
+import Chip from "../../../components/UI/Chip";
+import SaveBtn from "../../../components/UI/SaveBtn";
+import Title from "../../../components/UI/Title";
 
 const Overview = ({ coin }) => {
   const currentPrice = `$${convertNumber(coin.market_data.current_price.usd)}`;
