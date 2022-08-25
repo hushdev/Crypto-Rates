@@ -42,18 +42,17 @@ const StyledMobileNavbar = styled.nav`
   @media (max-width: 730px) {
     display: flex;
     position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    bottom: 15px;
+    left: 15px;
+    width: calc(100% - 30px);
     z-index: 100;
     .nav-card {
-      border-radius: 0;
       width: 100%;
       display: flex;
       justify-content: space-around;
       overflow: visible;
       background-color: var(--gray-transparent);
-      backdrop-filter: blur(5px);
+      backdrop-filter: blur(10px);
       a {
         color: var(--text-gray);
         text-decoration: none;

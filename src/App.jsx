@@ -44,8 +44,8 @@ const App = () => {
 const StyledApp = styled.div`
   position: relative;
   padding-bottom: 20px;
-  @media (max-width: 660px) {
-    padding-bottom: 64px;
+  @media (max-width: 730px) {
+    padding-bottom: 79px;
   }
 `;
 

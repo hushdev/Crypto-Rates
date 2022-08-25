@@ -43,7 +43,7 @@ const Navbar = () => {
 
 const StyledNavbar = styled.div`
   background-color: var(--gray-transparent);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
   padding: 8px 15px;
   border-bottom: 1px solid var(--gray-decor);
   margin-bottom: 25px;
