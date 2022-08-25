@@ -1,8 +1,9 @@
 import React from "react";
-import GoBackBtn from "../../components/UI/GoBackBtn";
 import { useQuery } from "react-query";
 import { getCoinInfo } from "../../api/queries";
 import { useParams } from "react-router-dom";
+
+import GoBackBtn from "../../components/UI/GoBackBtn";
 import Loader from "../../components/UI/Loader";
 import Graph from "./components/Graph";
 import ErrorMessage from "../../components/UI/ErrorMessage";

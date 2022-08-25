@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+
 import Button from "../../../components/UI/Button";
 import Loader from "../../../components/UI/Loader";
 import { ReactComponent as ArrowSVG } from "../../../assets/svg/bold-arrow.svg";

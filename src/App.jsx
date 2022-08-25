@@ -4,13 +4,14 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-import Container from "./components/UI/Container";
-import Navbar from "./components/UI/Navbar";
 import AboutPage from "./pages/About";
 import DashboardPage from "./pages/Dashboard";
 import GraphPage from "./pages/Graph";
 import CoinsView from "./pages/Coins";
 import BlogPage from "./pages/Blog";
+
+import Container from "./components/UI/Container";
+import Navbar from "./components/UI/Navbar";
 import MobileNavbar from "./components/UI/MobileNavbar";
 
 const App = () => {

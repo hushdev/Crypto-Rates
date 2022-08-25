@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+
+import { useQuery } from "react-query";
+import { getExactCoins } from "../../../../api/queries";
+
 import Title from "../../../../components/UI/Title";
 import Loader from "../../../../components/UI/Loader";
 import Row from "../../../../components/UI/Row";
 import ErrorMessage from "../../../../components/UI/ErrorMessage";
-import { useQuery } from "react-query";
-import { getExactCoins } from "../../../../api/queries";
 import CoinCardInfo from "./CoinCardInfo";
 
 const SavedCoins = () => {

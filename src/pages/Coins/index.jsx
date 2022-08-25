@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useQuery } from "react-query";
 import { getRates } from "../../api/queries";
+
 import Coins from "./components/Coins";
 import Loader from "../../components/UI/Loader";
 import ErrorMessage from "../../components/UI/ErrorMessage";

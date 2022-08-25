@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useQuery } from "react-query";
 import styled from "styled-components";
+import { useQuery } from "react-query";
 import { getCoinGraph } from "../../../api/queries";
 import convertUTC from "../../../utils/convert-utc";
+
 import ErrorMessage from "../../../components/UI/ErrorMessage";
 import Loader from "../../../components/UI/Loader";
 

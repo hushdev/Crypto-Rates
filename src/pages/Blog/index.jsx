@@ -1,6 +1,7 @@
 import React from "react";
 import { useQuery } from "react-query";
 import { getNews } from "../../api/queries";
+
 import Blog from "./components/Blog";
 import ErrorMessage from "../../components/UI/ErrorMessage";
 import Loader from "../../components/UI/Loader";

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+
 import Card from "../../../components/UI/Card";
 import Chip from "../../../components/UI/Chip";
 import Title from "../../../components/UI/Title";

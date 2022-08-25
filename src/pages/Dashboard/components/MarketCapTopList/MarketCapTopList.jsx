@@ -1,11 +1,14 @@
 import React from "react";
+import { useQuery } from "react-query";
+import { getTopSevenCoins } from "../../../../api/queries";
 import styled from "styled-components";
+
 import Title from "../../../../components/UI/Title";
 import Row from "../../../../components/UI/Row";
 import ErrorMessage from "../../../../components/UI/ErrorMessage";
-import { useQuery } from "react-query";
-import { getTopSevenCoins } from "../../../../api/queries";
 import MarketCapTopListCard from "./MarketCapTopListCard";
+
+
 
 const MarketCapTopList = () => {
   const { data, error } = useQuery("topSevenCoins", () => getTopSevenCoins());
