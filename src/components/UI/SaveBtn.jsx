@@ -42,34 +42,26 @@ const SaveBtn = ({ onClick, coin, className, showLabel }) => {
 const StyledSaveBtn = styled.div`
   display: flex;
   align-items: center;
+
   span {
     margin-right: 10px;
   }
+
   svg {
     width: 13px;
     height: 13px;
     fill: ${(props) => (props.active ? "var(--blue)" : "var(--text-gray)")};
     transition: 0.2s ease;
     cursor: pointer;
-    animation: ${(props) => (props.active ? "bounce 0.3s forwards" : "")};
+
     &:hover {
       fill: var(--blue-hover);
     }
+    
     @media (max-width: 760px) {
       &:hover {
         pointer-events: none;
       }
-    }
-  }
-  @keyframes bounce {
-    0% {
-      transform: ${(props) => (props.showLabel ? "scale(1.4) translateY(-1px)" : "scale(1)")};
-    }
-    50% {
-      transform: scale(1.7);
-    }
-    100% {
-      transform: ${(props) => (props.showLabel ? "scale(1.4) translateY(-1px)" : "scale(1)")};
     }
   }
 `;
