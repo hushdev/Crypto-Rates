@@ -7,10 +7,9 @@ import SaveBtn from "../../UI/SaveBtn";
 import Title from "../../UI/Title";
 
 const Overview = ({ coin }) => {
-  const priceChangeClass = coin.market_data.price_change_percentage_24h > 0 ? "green" : "red";
   const currentPrice = `$${convertNumber(coin.market_data.current_price.usd)}`;
-  const priceChange = `${convertNumber(coin.market_data.price_change_percentage_7d.toFixed(4))}%`;
-  console.log(coin.market_data);
+  const priceChange = coin.market_data.price_change_percentage_7d;
+  const priceChangeClass = priceChange > 0 ? "green" : "red";
   const marketCap = `$${convertNumber(coin.market_data.market_cap.usd)}`;
   const ath = `$${convertNumber(coin.market_data.ath.usd)}`;
   const atl = `$${convertNumber(coin.market_data.atl.usd)}`;
@@ -25,7 +24,7 @@ const Overview = ({ coin }) => {
       </Title>
       <Title size={4}>
         {currentPrice}
-        <span className={priceChangeClass}>{priceChange} (7 days)</span>
+        <span className={priceChangeClass}>{priceChange.toFixed(2)}% (7 days)</span>
       </Title>
       <div className="info">
         {coin.description.en && (
@@ -112,21 +111,16 @@ const StyledOverview = styled.div`
     display: flex;
     align-items: center;
     span {
-      color: var(--text-white);
+      color: var(--text-gray);
       margin-left: 15px;
     }
     span.green {
       color: green;
-      &::before {
-        content: "+";
-      }
     }
     span.red {
       color: red;
-      &::before {
-        content: "-";
-      }
     }
+    
   }
 
   & p {
