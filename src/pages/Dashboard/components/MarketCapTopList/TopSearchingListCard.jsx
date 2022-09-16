@@ -6,11 +6,11 @@ import Card from "../../../../components/UI/Card";
 import Chip from "../../../../components/UI/Chip";
 import Title from "../../../../components/UI/Title";
 
-const CoinCardInfo = ({ coin }) => {
+const TopSearchingListCard = ({ coin }) => {
   const rank = coin.market_cap_rank;
 
   return (
-    <StyledCoinCardInfo>
+    <StyledTopSearchingListCard>
       <NavLink to={`/graph/${coin.id}`} className="navlink">
         <Card className="card">
           <Title size={4} className="title">
@@ -22,11 +22,11 @@ const CoinCardInfo = ({ coin }) => {
           </Title>
         </Card>
       </NavLink>
-    </StyledCoinCardInfo>
+    </StyledTopSearchingListCard>
   );
 };
 
-const StyledCoinCardInfo = styled.div`
+const StyledTopSearchingListCard = styled.div`
   width: calc(33.3% - 20px);
   margin: 10px;
   &:nth-child(1),
@@ -78,4 +78,4 @@ const StyledCoinCardInfo = styled.div`
   }
 `;
 
-export default CoinCardInfo;
+export default TopSearchingListCard;

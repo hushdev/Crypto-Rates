@@ -40,7 +40,8 @@ const CoinGraph = ({ coin }) => {
 
   useEffect(() => {
     refetch();
-    period >= 30 || period === 'max' ? setPointScale(0) : setPointScale(3);
+    period > 30 ? setPointScale(1) : setPointScale(3);
+    period === 'max' && setPointScale(0);
   }, [period, refetch]);
 
   useEffect(() => {
@@ -72,13 +73,8 @@ const CoinGraph = ({ coin }) => {
       },
     },
     elements: {
-      line: {
-        tension: 0.4,
-        borderJoinStyle: "round",
-      },
       point: {
         radius: pointScale,
-        pointStyle: 'star'
       },
     },
   };

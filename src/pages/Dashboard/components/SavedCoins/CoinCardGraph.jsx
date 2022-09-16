@@ -24,7 +24,7 @@ const CoinCardGraph = ({ price }) => {
   };
 
   const chartData = {
-    labels: Array(60).fill(""),
+    labels: Array(price.length).fill(""),
     datasets: [
       {
         fill: false,

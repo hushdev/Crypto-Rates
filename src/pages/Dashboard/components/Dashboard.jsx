@@ -1,12 +1,12 @@
 import React from "react";
-import MarketCapTopList from "./MarketCapTopList/MarketCapTopList";
+import TopSearchingList from "./MarketCapTopList/TopSearchingList";
 import SavedCoins from "./SavedCoins/SavedCoins";
 
 const Dashboard = () => {
   return (
     <div>
       <SavedCoins />
-      <MarketCapTopList />
+      <TopSearchingList />
     </div>
   );
 };

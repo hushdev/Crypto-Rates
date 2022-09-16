@@ -6,29 +6,29 @@ import styled from "styled-components";
 import Title from "../../../../components/UI/Title";
 import Row from "../../../../components/UI/Row";
 import ErrorMessage from "../../../../components/UI/ErrorMessage";
-import MarketCapTopListCard from "./MarketCapTopListCard";
+import TopSearchingListCard from "./TopSearchingListCard";
 
 
 
-const MarketCapTopList = () => {
+const TopSearchingList = () => {
   const { data, error } = useQuery("topSevenCoins", () => getTopSevenCoins());
 
   return (
-    <StyledMarketCapTopList>
+    <StyledTopSearchingList>
       {error && <ErrorMessage>{error.message}</ErrorMessage>}
       <Title size={2} className="info-title">
         🔝 TOP searching list <span>{data ? "24 hours" : "The list is unavailable"}</span>
       </Title>
       <Row flexWrap="wrap" overflowX="auto" padding="0 0 20px 0">
         {data?.coins.map((coin, i) => (
-          <MarketCapTopListCard key={i} coin={coin.item} />
+          <TopSearchingListCard key={i} coin={coin.item} />
         ))}
       </Row>
-    </StyledMarketCapTopList>
+    </StyledTopSearchingList>
   );
 };
 
-const StyledMarketCapTopList = styled.div`
+const StyledTopSearchingList = styled.div`
   margin-top: 20px;
   & .info-title {
     display: flex;
@@ -41,4 +41,4 @@ const StyledMarketCapTopList = styled.div`
   }
 `;
 
-export default MarketCapTopList;
+export default TopSearchingList;

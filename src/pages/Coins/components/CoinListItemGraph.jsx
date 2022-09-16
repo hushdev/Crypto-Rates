@@ -14,9 +14,6 @@ const CoinListItemGraph = ({ price }) => {
       },
     },
     elements: {
-      line: {
-        tension: 0.3,
-      },
       point: {
         radius: 0,
       },
@@ -24,12 +21,12 @@ const CoinListItemGraph = ({ price }) => {
   };
 
   const chartData = {
-    labels: Array(60).fill(""),
+    labels: Array(price.length).fill(""),
     datasets: [
       {
         fill: false,
         data: price,
-        borderWidth: 1.2,
+        borderWidth: 0.9,
         borderColor: price[0] <= price[price.length - 1] ? "#1f9531" : "#8f1818",
       },
     ],
