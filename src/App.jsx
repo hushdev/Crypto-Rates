@@ -18,6 +18,7 @@ const App = () => {
   const location = useLocation();
   const queryClient = new QueryClient();
   const baseUrl = process.env.REACT_APP_API;
+  console.log('working')
 
   return (
     <StyledApp>
